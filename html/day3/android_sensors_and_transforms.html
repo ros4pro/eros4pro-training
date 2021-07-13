@@ -1,0 +1,390 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Connecting Android sensors to ROS transforms &mdash; eros4pro training 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/hacks.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Mapping and navigation in simulated environment" href="2d_map_nav_gazebo.html" />
+    <link rel="prev" title="Day 3" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> eros4pro training
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../day1/index.html">Day 1</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day2/index.html">Day 2</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Day 3</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Connecting Android sensors to ROS transforms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#setting-up-an-android-phone-as-a-sensor">Setting up an Android phone as a sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#visualizing-imu-data-in-rviz">Visualizing IMU data in RViz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-static-transform">Creating a static transform</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#dynamic-transform">Dynamic transform</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="2d_map_nav_gazebo.html">Mapping and navigation in simulated environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2d_map_nav_robot.html">2D mapping and navigation on Robotont</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3d_map_robot.html">3D mapping on Robotont</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day4/index.html">Day 4</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day5/index.html">Day 5</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">eros4pro training</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Day 3</a> &raquo;</li>
+        
+      <li>Connecting Android sensors to ROS transforms</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/day3/android_sensors_and_transforms.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="connecting-android-sensors-to-ros-transforms">
+<h1>Connecting Android sensors to ROS transforms<a class="headerlink" href="#connecting-android-sensors-to-ros-transforms" title="Permalink to this headline">¶</a></h1>
+<p>In the last workshop, we worked with AR-tags and used some functionality from a tf module. In this workshop we go slightly deeper and exlore how TFs are created and what is their role in visualizing sensor data.</p>
+<p>More precisely, we are going to explore how sensors from an Android phone can be imported to ROS and how to attach the sensor data to an existing robot.</p>
+<section id="setting-up-an-android-phone-as-a-sensor">
+<h2>Setting up an Android phone as a sensor<a class="headerlink" href="#setting-up-an-android-phone-as-a-sensor" title="Permalink to this headline">¶</a></h2>
+<p>A smartphone can automatically adjust its display rotation based on how the person is holding it. The brightness of the display can automatically adjust based on the ambient light levels. It is possible to download an app that turns a smartphone into a compass where the needle always points to the north. These are just a few of the examples that make use of the many sensors embedded in a smartphone. These sensors can, of course, be used in a robotic system as well. For instance, by taping a smartphone to a toy car, we create a machine that can position itself in the world using the GPS.</p>
+<p>In this section, we are going to use an Android device as a multisensor, integrate it with a ROS system, and visualize the sensor data.</p>
+<p>First, we can easily turn an Android phone into a ROS sensor with an app called <a class="reference external" href="http://wiki.ros.org/android_sensors_driver">ROS Android Sensors Driver</a>, available in Google Play store. Once the app has been installed on the Android device, we need to establish connection between the Android device and the ROS computer.</p>
+<ol class="arabic">
+<li><p>Connect the Android device and the ROS computer into the WiFi network named <code class="code bash docutils literal notranslate"><span class="pre">ros_training</span></code>.</p></li>
+<li><p>Once the ROS computer and Android device are connected and able to see each other, we need the IP address of the ROS computer. This IP address must be inserted into the Android app in the following format:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>http://192.168.88.xxx:11311/
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Replace the <code class="code bash docutils literal notranslate"><span class="pre">xxx</span></code> with the actual IP address of the ROS computer. You can find out the IP with the <code class="code bash docutils literal notranslate"><span class="pre">hostname</span> <span class="pre">-I</span></code> or <code class="code bash docutils literal notranslate"><span class="pre">ip</span> <span class="pre">addr</span></code> commands.
+Make sure that roscore is running on the ROS computer before you press OK in the Android app.
+If the set up was successful, we should now see several new topics when listing all active ROS topics on the computer. The active topic list might look something similar to the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>peko@laptop-1:~$ rostopic list
+/android/fix
+/android/illuminance
+/android/imu
+/android/magnetic_field
+/rosout
+/rosout_agg
+</pre></div>
+</div>
+<p>In order to be absolutely certain that messages from the Android device are coming through, we should print on screen the messages from one of these topics, for example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rostopic <span class="nb">echo</span> /android/imu
+</pre></div>
+</div>
+<p>If there are messages printed with continuously updating values, the connection is sucessfully established and the phone is sending data to the ROS device.</p>
+<p>Let’s focus on the data that is received. We can see that the message contains orientation, velocity, and acceleration values. In addition to that, there is a header section with a <strong>frame_id</strong> field. This field is really important as it specifies the coordinate frame where the IMU data is given.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>header:
+  seq: <span class="m">267624</span>
+  stamp:
+    secs: <span class="m">1623646810</span>
+    nsecs: <span class="m">621000000</span>
+  **frame_id: <span class="s2">&quot;/imu&quot;</span>**
+</pre></div>
+</div>
+</section>
+<section id="visualizing-imu-data-in-rviz">
+<h2>Visualizing IMU data in RViz<a class="headerlink" href="#visualizing-imu-data-in-rviz" title="Permalink to this headline">¶</a></h2>
+<p>RViz is a simple yet powerful visialization tool in ROS. It has a capability of visualizing IMU and tons of other type of ROS data. The data is visualized by display plugins, many of which are already part of the standard ROS desktop installation.</p>
+<ol class="arabic simple">
+<li><p>Open RViz by entering the command <code class="code bash docutils literal notranslate"><span class="pre">rviz</span></code> to the terminal.</p></li>
+</ol>
+<p>In order to start visualizing IMU, we need a display plugin named <code class="code bash docutils literal notranslate"><span class="pre">IMU</span></code>. The simplest way to add this would be selecting our IMU topic under by topic tab:</p>
+<figure class="align-center" id="fig-imu-by-topic">
+<a class="reference internal image-reference" href="../_images/day3_rviz_imu_by_topic.png"><img alt="../_images/day3_rviz_imu_by_topic.png" src="../_images/day3_rviz_imu_by_topic.png" style="width: 300pt;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">IMU display plugin added by topic.</span><a class="headerlink" href="#fig-imu-by-topic" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>As seen, nothing is yet to be displayed. This is expected, because we have not provided any information on how /imu frame relates to the Fixed Frame. The Fixed Frame let’s RViz know with respect to what all of the content will be visualized.</p>
+<ol class="arabic simple">
+<li><p>Change the Fixed Frame value to point to the /imu frame</p></li>
+<li><p>If everything is correctly configured, we should see an arrow as depicted in <a class="reference internal" href="#fig-imu-by-topic"><span class="std std-numref">Fig. 2</span></a>. Pick up the Android device, rotate it and observe the visualization in RViz.</p></li>
+</ol>
+<figure class="align-center" id="fig-imu-arrow">
+<a class="reference internal image-reference" href="../_images/day3_rviz_imu_arrow.png"><img alt="../_images/day3_rviz_imu_arrow.png" src="../_images/day3_rviz_imu_arrow.png" style="width: 300pt;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Visualization of IMU data in RViz.</span><a class="headerlink" href="#fig-imu-arrow" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="creating-a-static-transform">
+<h2>Creating a static transform<a class="headerlink" href="#creating-a-static-transform" title="Permalink to this headline">¶</a></h2>
+<p>In a real-world scenario, we need to visualize multiple objects together in the same scene (e.g. an IMU mounted on the top of a robot). This means that we have to let the software know about all the relations between the objects.
+In ROS, this is achieved via concept of TF, which keeps a tree of transforms between objects and provides tools to get or set transforms between any two objects in the tree.
+There are two types of transforms: static and dynamic, which are being published on /tf_static and /tf topics, respectively.
+While /tf is meant for continously updating transforms (e.g. links of a robot manipulator), the /tf_static is broadcasted, latched, and will not change unless ordered.</p>
+<p>First, let’s try adding a static transform that places our Android IMU sensor to the world.
+We will name the world frame <code class="code bash docutils literal notranslate"><span class="pre">map</span></code> and create a transform from <code class="code bash docutils literal notranslate"><span class="pre">map</span></code> (parent) to
+<code class="code bash docutils literal notranslate"><span class="pre">imu</span></code> frame (child).</p>
+<ol class="arabic">
+<li><p>Run <code class="code bash docutils literal notranslate"><span class="pre">roscore</span></code>.</p></li>
+<li><p>Using <em>static_transform_publisher</em>, create a transform between
+<code class="code bash docutils literal notranslate"><span class="pre">map</span></code> and <code class="code bash docutils literal notranslate"><span class="pre">imu</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun tf static_transform_publisher <span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> map imu <span class="m">10</span>
+</pre></div>
+</div>
+<p>Use <a class="reference external" href="http://wiki.ros.org/tf2_ros#static_transform_publisher">http://wiki.ros.org/tf2_ros#static_transform_publisher</a>
+as a reference.
+This command keeps the rotation zero for now but sets the translation
+so that <code class="code bash docutils literal notranslate"><span class="pre">imu</span></code> frame would be 1 meter higher than the <code class="code bash docutils literal notranslate"><span class="pre">map</span></code> frame.</p>
+</li>
+<li><p>Launch <code class="code bash docutils literal notranslate"><span class="pre">rqt</span></code> in another terminal</p>
+<p>On the top bar, go to
+<em>Plugins</em> -&gt; <em>Visualization</em> -&gt; <em>TF Tree</em>.
+This will show you the current transforms in the system.
+And should see something like this:</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/day3_tftree_static.png"><img alt="../_images/day3_tftree_static.png" src="../_images/day3_tftree_static.png" style="width: 372.4px; height: 336.0px;" /></a>
+</figure>
+</li>
+<li><p>Open up RViz again and set the Fixed Frame to <code class="code bash docutils literal notranslate"><span class="pre">map</span></code>. Because of the published transform, we can choose the desired Fixed Frame conveniently from the drop-down menu in RViz.</p></li>
+<li><p>In the RViz windows,
+you should see the origin of IMU acceleration vector and range be set to
+1 meter above ground.</p></li>
+<li><p>Add a display plugin named <code class="code bash docutils literal notranslate"><span class="pre">TF</span></code> to visualize all the frames in the TF tree.</p></li>
+<li><p>Use <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">CTRL</kbd>-<kbd class="kbd docutils literal notranslate">C</kbd></kbd> to stop <em>static_transform_publisher</em>. What happened in RViz after we stop publishing a transform?</p></li>
+<li><p>Rerun the transform and experiment with different transform parameters (including orientation).</p></li>
+<li><p>If everything works, use <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">CTRL</kbd>-<kbd class="kbd docutils literal notranslate">C</kbd></kbd> to shut down all ROS programs and continue with the next task.</p></li>
+</ol>
+<section id="exercise">
+<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h3>
+<p>Suppose we have attached the Android phone now on top of Robotont’s computer. Your task here is to implement the proper TF publisher in order to see the imu data with respect to the robot.</p>
+<ol class="arabic">
+<li><p>Open up a visualization of the Robotont robot model:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_nuc_description display_simulated_robot.launch
+</pre></div>
+</div>
+<p>This launch file will do three things:</p>
+<ol class="loweralpha simple">
+<li><p>load the robot model into the ROS parameter server</p></li>
+<li><p>start <em>robot_state_publisher</em>, which publishes transforms of all the robot components (called links).</p></li>
+<li><p>starts RViz with a custom configuration file that already brings up some plugins e.g. for visualizing the robot model.</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The robot description is a URDF-formatted string. You can be explore the string with the <code class="code bash docutils literal notranslate"><span class="pre">rosparam</span> <span class="name builtin"><span class="pre">echo</span></span> <span class="pre">/robot_description</span></code> command.</p>
+</div>
+</li>
+<li><p>Publish a static transform that would connect the Android sensors IMU with the Robotont on-board computer (frame: <code class="code bash docutils literal notranslate"><span class="pre">computer_link</span></code>).</p></li>
+<li><p>Add again the imu visualization plugin to enjoy the show.</p></li>
+</ol>
+</section>
+</section>
+<section id="dynamic-transform">
+<h2>Dynamic transform<a class="headerlink" href="#dynamic-transform" title="Permalink to this headline">¶</a></h2>
+<p>In the previous sections, we displayed an arrow which starting point was set to the origin of the imu frame and end point corresponded to the data received on <code class="code bash docutils literal notranslate"><span class="pre">/android/imu</span></code> topic.
+Currently, there is no frame at the end point of the arrow. However, in many cases it would be useful to have also the end point available in the tf tree.
+This is where transform programming comes in play.
+Dynamic transforms are published in the nodes continuously.</p>
+<p>Our goal here is to broadcast a new frame <strong>imu_end_pt</strong> as a child of the <strong>imu</strong> frame.
+The new frame should rotate as we change the orientation of the IMU and translate according to the imu’s <em>linear_acceleration</em> field.</p>
+<ol class="arabic simple">
+<li><p>First, recall day 2 and create a new catkin package with <em>roscpp</em>, <em>tf2</em>, and <em>tf2_ros</em> dependencies.</p></li>
+<li><p>Use this <a class="reference external" href="http://wiki.ros.org/tf2/Tutorials/Writing%20a%20tf2%20broadcaster%20%28C%2B%2B%29">this</a>
+tutorial as an example to publish <strong>imu</strong> to <strong>imu_end_pt</strong> transform
+according to IMU data.</p></li>
+<li><p>To test your code, build, source, and run the node.</p></li>
+<li><p>Launch RViz and visualize with the tf display as in previous sections.
+like in the previous task.</p></li>
+<li><p>Now you should see your <em>imu_end_pt</em> frame responding to the IMU’s acceleration and orientation.
+If yes, congratulations, you have completed the task.
+If not, go double check the transforms or ask instructors to assist.</p></li>
+</ol>
+<p>You can also try it with a real robot, set fixed frame to odom, so that
+the robot would move in RViz according to wheel odometry.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="2d_map_nav_gazebo.html" class="btn btn-neutral float-right" title="Mapping and navigation in simulated environment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Day 3" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, University of Tartu, License CC BY-ND-NC
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

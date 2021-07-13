@@ -1,0 +1,266 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>MoveGroup C++ interface for programming the manipulator &mdash; eros4pro training 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/hacks.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Action Client for opening/closing the gripper" href="gripper_control.html" />
+    <link rel="prev" title="Kinematic descriptions with URDF/XACRO and generating MoveIt configuration packages" href="urdf.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> eros4pro training
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../day1/index.html">Day 1</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day2/index.html">Day 2</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day3/index.html">Day 3</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Day 4</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="xarm7_xarmstudio.html">xArm7 safety and xArmStudio live control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xarm_ros_setup.html">Installing xArm7 packages for ROS Noetic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moveit.html">Motion planning and MoveIt, MoveIt GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="urdf.html">Kinematic descriptions with URDF/XACRO and generating MoveIt configuration packages</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">MoveGroup C++ interface for programming the manipulator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#brief-introduction-to-movegroup-c-interface">Brief introduction to MoveGroup C++ interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#before-we-start-coding">Before we start coding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#planning-to-a-pose-goal">Planning to a Pose Goal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#planning-to-a-joint-value-goal">Planning to a Joint Value Goal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#planning-to-a-named-goal">Planning to a Named Goal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#computing-a-cartesian-path">Computing a Cartesian Path</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gripper_control.html">Action Client for opening/closing the gripper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pick_place_task.html">Pick-and-place task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multirobot_mp.html">MoveIt for multi-robot systems</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day5/index.html">Day 5</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">eros4pro training</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Day 4</a> &raquo;</li>
+        
+      <li>MoveGroup C++ interface for programming the manipulator</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/day4/move_group_interface.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="movegroup-c-interface-for-programming-the-manipulator">
+<h1>MoveGroup C++ interface for programming the manipulator<a class="headerlink" href="#movegroup-c-interface-for-programming-the-manipulator" title="Permalink to this headline">¶</a></h1>
+<section id="brief-introduction-to-movegroup-c-interface">
+<h2>Brief introduction to MoveGroup C++ interface<a class="headerlink" href="#brief-introduction-to-movegroup-c-interface" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/RoboNuggets/FDRenderer/index.html?LearningNugget=759fac38502a42d7bbf93105e8b38be8&amp;Language=EN&amp;FDEP=true">MoveGroup C++ interface</a></p>
+<iframe class="nugget" src="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/RoboNuggets/FDRenderer/index.html?LearningNugget=759fac38502a42d7bbf93105e8b38be8&Language=EN&FDEP=true"></iframe></section>
+<section id="before-we-start-coding">
+<h2>Before we start coding<a class="headerlink" href="#before-we-start-coding" title="Permalink to this headline">¶</a></h2>
+<p>In this section we are going to learn how to program a manipulator robot using the MoveGroup C++ interface. For practicing how to program robot manipulators by using MoveGroup C++ interface, let’s use the digital twin by launching the demo.launch. The following list of nuggets explain different ways we can program robot manipulators using MoveGroup C++ interface. All the example code solutions can be found in the repository for <a class="reference external" href="https://github.com/ut-ims-robotics/movegroup_interface_demo">movegroup_interface_demo</a>. Clone it and build it.</p>
+<p>The API refrence can be found <a class="reference external" href="http://docs.ros.org/noetic/api/moveit_ros_planning_interface/html/classmoveit_1_1planning__interface_1_1MoveGroupInterface.html">here</a></p>
+<p>Keep in mind that in the example code, the execute function has been commented out for safety reasons. When working with a digital twin it is safe to uncomment the line.</p>
+</section>
+<section id="planning-to-a-pose-goal">
+<h2>Planning to a Pose Goal<a class="headerlink" href="#planning-to-a-pose-goal" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/RoboNuggets/FDRenderer/index.html?LearningNugget=579c5c52952f49eda08229beef7b1d5c&amp;Language=EN&amp;FDEP=true">MoveGroup C++ interface: planning to a pose goal</a></p>
+<iframe class="nugget" src="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/RoboNuggets/FDRenderer/index.html?LearningNugget=579c5c52952f49eda08229beef7b1d5c&Language=EN&FDEP=true"></iframe></section>
+<section id="planning-to-a-joint-value-goal">
+<h2>Planning to a Joint Value Goal<a class="headerlink" href="#planning-to-a-joint-value-goal" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/RoboNuggets/FDRenderer/index.html?LearningNugget=e42cbc47f95843f2bb38286b53daa41a&amp;Language=EN&amp;FDEP=true">MoveGroup C++ interface: planning to a joint value goal</a></p>
+<iframe class="nugget" src="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/RoboNuggets/FDRenderer/index.html?LearningNugget=e42cbc47f95843f2bb38286b53daa41a&Language=EN&FDEP=true"></iframe></section>
+<section id="planning-to-a-named-goal">
+<h2>Planning to a Named Goal<a class="headerlink" href="#planning-to-a-named-goal" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/RoboNuggets/FDRenderer/index.html?LearningNugget=e32cef73d12c42beafcff210d20448ed&amp;Language=EN&amp;FDEP=true">MoveGroup C++ interface: planning to a named goal</a></p>
+<iframe class="nugget" src="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/RoboNuggets/FDRenderer/index.html?LearningNugget=e32cef73d12c42beafcff210d20448ed&Language=EN&FDEP=true"></iframe></section>
+<section id="computing-a-cartesian-path">
+<h2>Computing a Cartesian Path<a class="headerlink" href="#computing-a-cartesian-path" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/RoboNuggets/FDRenderer/index.html?LearningNugget=5010ab1c38df48258ea2522284565686&amp;Language=EN&amp;FDEP=true">MoveGroup C++ interface: planning a Cartesian path</a></p>
+<iframe class="nugget" src="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/RoboNuggets/FDRenderer/index.html?LearningNugget=5010ab1c38df48258ea2522284565686&Language=EN&FDEP=true"></iframe></section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="gripper_control.html" class="btn btn-neutral float-right" title="Action Client for opening/closing the gripper" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="urdf.html" class="btn btn-neutral float-left" title="Kinematic descriptions with URDF/XACRO and generating MoveIt configuration packages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, University of Tartu, License CC BY-ND-NC
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,255 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>MoveIt for multi-robot systems &mdash; eros4pro training 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/hacks.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Day 5" href="../day5/index.html" />
+    <link rel="prev" title="Pick-and-place task" href="pick_place_task.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> eros4pro training
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../day1/index.html">Day 1</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day2/index.html">Day 2</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day3/index.html">Day 3</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Day 4</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="xarm7_xarmstudio.html">xArm7 safety and xArmStudio live control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xarm_ros_setup.html">Installing xArm7 packages for ROS Noetic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moveit.html">Motion planning and MoveIt, MoveIt GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="urdf.html">Kinematic descriptions with URDF/XACRO and generating MoveIt configuration packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="move_group_interface.html">MoveGroup C++ interface for programming the manipulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gripper_control.html">Action Client for opening/closing the gripper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pick_place_task.html">Pick-and-place task</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">MoveIt for multi-robot systems</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#using-xacro-for-multi-robot-urdf-description">Using XACRO for multi-robot URDF description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#moveit-setup-assistant-with-multi-robot-systems">MoveIt Setup Assistant with multi-robot systems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#moveit-gui-with-multi-robot-system">MoveIt GUI with multi-robot system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#movegroup-c-interface-planning-with-two-manipulators">MoveGroup C++ interface: planning with two manipulators</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day5/index.html">Day 5</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">eros4pro training</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Day 4</a> &raquo;</li>
+        
+      <li>MoveIt for multi-robot systems</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/day4/multirobot_mp.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="moveit-for-multi-robot-systems">
+<h1>MoveIt for multi-robot systems<a class="headerlink" href="#moveit-for-multi-robot-systems" title="Permalink to this headline">¶</a></h1>
+<p>In this section we are going to learn how to use MoveIt for a multi-robot setup.</p>
+<section id="using-xacro-for-multi-robot-urdf-description">
+<h2>Using XACRO for multi-robot URDF description<a class="headerlink" href="#using-xacro-for-multi-robot-urdf-description" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/RoboNuggets/FDRenderer/index.html?LearningNugget=bf49b50db30b456fb5424f39a8b24616&amp;Language=EN&amp;FDEP=true">Using XACRO for multi-robot URDF description</a></p>
+<iframe class="nugget" src="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/RoboNuggets/FDRenderer/index.html?LearningNugget=bf49b50db30b456fb5424f39a8b24616&Language=EN&FDEP=true"></iframe></section>
+<section id="moveit-setup-assistant-with-multi-robot-systems">
+<h2>MoveIt Setup Assistant with multi-robot systems<a class="headerlink" href="#moveit-setup-assistant-with-multi-robot-systems" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/RoboNuggets/FDRenderer/index.html?LearningNugget=b09e4e4958834830b4b7a4840b2ab21f&amp;Language=EN&amp;FDEP=true">MoveIt Setup Assistant with multi-robot systems</a></p>
+<iframe class="nugget" src="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/RoboNuggets/FDRenderer/index.html?LearningNugget=b09e4e4958834830b4b7a4840b2ab21f&Language=EN&FDEP=true"></iframe></section>
+<section id="moveit-gui-with-multi-robot-system">
+<h2>MoveIt GUI with multi-robot system<a class="headerlink" href="#moveit-gui-with-multi-robot-system" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/RoboNuggets/FDRenderer/index.html?LearningNugget=fbc0fe7ed7924a55b2060d0c5c620f7d&amp;Language=EN&amp;FDEP=true">MoveIt GUI with multi-robot system</a></p>
+<iframe class="nugget" src="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/RoboNuggets/FDRenderer/index.html?LearningNugget=fbc0fe7ed7924a55b2060d0c5c620f7d&Language=EN&FDEP=true"></iframe></section>
+<section id="movegroup-c-interface-planning-with-two-manipulators">
+<h2>MoveGroup C++ interface: planning with two manipulators<a class="headerlink" href="#movegroup-c-interface-planning-with-two-manipulators" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/RoboNuggets/FDRenderer/index.html?LearningNugget=ed75a59dfce54bbb8a5e93eb33261890&amp;Language=EN&amp;FDEP=true">MoveGroup C++ interface: planning with two manipulators</a></p>
+<iframe class="nugget" src="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/RoboNuggets/FDRenderer/index.html?LearningNugget=ed75a59dfce54bbb8a5e93eb33261890&Language=EN&FDEP=true"></iframe></section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../day5/index.html" class="btn btn-neutral float-right" title="Day 5" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pick_place_task.html" class="btn btn-neutral float-left" title="Pick-and-place task" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, University of Tartu, License CC BY-ND-NC
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

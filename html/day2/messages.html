@@ -1,0 +1,355 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Publisher &amp; Subscriber &mdash; eros4pro training 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/hacks.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Advanced task: AR Remote Control" href="ar_remote_control.html" />
+    <link rel="prev" title="AR Markers" href="ar_markers.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> eros4pro training
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../day1/index.html">Day 1</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Day 2</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="catkin_workspace.html">Catkin Workspaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="catkin_package.html">Creating Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="node.html">Creating Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="launch.html">Launch file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_markers.html">AR Markers</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Publisher &amp; Subscriber</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#writing-a-publisher">Writing a Publisher</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-the-code-in-simulation">Running the code in simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-the-code-on-a-robotont">Running the code on a Robotont</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#writing-a-subscriber">Writing a Subscriber</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ar_remote_control.html">Advanced task: AR Remote Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maze_navigation.html">Advanced task: Maze Navigation using AR Markers</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day3/index.html">Day 3</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day4/index.html">Day 4</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day5/index.html">Day 5</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">eros4pro training</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Day 2</a> &raquo;</li>
+        
+      <li>Publisher &amp; Subscriber</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/day2/messages.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="publisher-subscriber">
+<h1>Publisher &amp; Subscriber<a class="headerlink" href="#publisher-subscriber" title="Permalink to this headline">¶</a></h1>
+<p>In this exercise, we will explore the concept of ROS messages and topics. The first type of ROS communication that we will explore is a one-way communication called <strong>messages</strong> which are sent over channels called <strong>topics</strong>. Typically one node publishes messages on a topic and another node subscribes to messages on that same topic.
+The construct that can publish messages is called a publisher, and the one receiving messages is called a subscriber.</p>
+<section id="writing-a-publisher">
+<h2>Writing a Publisher<a class="headerlink" href="#writing-a-publisher" title="Permalink to this headline">¶</a></h2>
+<p>Work your way through the video tutorials in the window below to learn how to write a simple ROS publisher.
+The videos will also introduce you to controlling the Robotont robot.
+To move to the next video, click on the arrow buttons next to the percentage above the video’s top right corner.</p>
+<p><a class="reference external" href="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/UNICO/FDRenderer/index.html?LearningNugget=470c9b7fc65c4dc783c255b449e8386f&amp;Language=EN&amp;FDEP=true">Writing a ROS Publisher in Python</a></p>
+<iframe class="nugget" src="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/UNICO/FDRenderer/index.html?LearningNugget=470c9b7fc65c4dc783c255b449e8386f&Language=EN&FDEP=true"></iframe><p>Let’s add a publisher to the same <cite>ar_control_node.py</cite> file we created earlier. We will add a publisher that will publish messages of type Twist - the messages used for making Robotont drive. Once we are done writing the code, we will try it out on the actual Robotont robot. Take a look at the documentation of the <a class="reference external" href="https://docs.ros.org/en/noetic/api/geometry_msgs/html/msg/Twist.html">geometry_msgs/Twist</a> message.</p>
+<p>Below is an overview of the steps detailed in the video tutorial. For more details, refer back to the videos.</p>
+<ol class="arabic">
+<li><p>First, add an import to <cite>ar_control_node.py</cite> to be able to use Twist messages.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">geometry_msgs.msg</span> <span class="kn">import</span> <span class="n">Twist</span>
+</pre></div>
+</div>
+</li>
+<li><p>Add the publisher by calling <cite>rospy.Publisher()</cite> and specifying the name of the topic where the publisher will publish its messages, message type, and queue size. Do it before calling <cite>rospy.spin()</cite> in the code.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a publisher for publishing Twist messages</span>
+<span class="n">velocity_pub</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">Publisher</span><span class="p">(</span><span class="s2">&quot;cmd_vel&quot;</span><span class="p">,</span> <span class="n">Twist</span><span class="p">,</span> <span class="n">queue_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Create a Twist message that tells the robot to go forward.</p></li>
+<li><p>Make the code keep running and publishing the Twist message at a rate of 1 Hz. In most applications, we would set the frequency higher, such as 10 Hz or even more, but here we will set it slow enough to be able to read the terminal output. Refer back to the video tutorial above on how to do this. Print out a log message every time you publish a new message.</p></li>
+<li><p>Run the code by typing the following commands in separate terminal windows. The output should be your created Twist message being printed out in the terminal at a rate of 1 Hz.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roscore
+rosrun ar_control_robotont ar_control_node.py
+</pre></div>
+</div>
+</li>
+<li><p>Take a look at what your publisher is doing. To do this, open another terminal window and look at the topic where the publisher is publishing its Twist messages.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rostopic <span class="nb">echo</span> /cmd_vel
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="running-the-code-in-simulation">
+<h2>Running the code in simulation<a class="headerlink" href="#running-the-code-in-simulation" title="Permalink to this headline">¶</a></h2>
+<p>Before you run your code on a physical robot, it is always a good idea to try it out in simulation first to catch potentially dangerous bugs.</p>
+<p>We will use a simnulation environment called Gazebo to visualise Robotont and its movements.
+Running the code will happen exactly as with a real robot, and the code is exactly the same.
+The only difference is that the robot will move in simulation, not in the real world.</p>
+<ol class="arabic">
+<li><p>Open Gazebo with a model of Robotont already in it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo world_minimaze.launch
+</pre></div>
+</div>
+</li>
+<li><p>Run your node with Gazebo open in the background. The model Robotont should move according to your Twist message.</p></li>
+<li><p><strong>Edit the Twist message to add a turning component and show the messages published to /cmd_vel topic to an instructor.</strong></p></li>
+</ol>
+</section>
+<section id="running-the-code-on-a-robotont">
+<h2>Running the code on a Robotont<a class="headerlink" href="#running-the-code-on-a-robotont" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Ask an instructor for a Robotont robot. Turn it on. Every Robotont has its own Wi-Fi access point, which means that in order to connect to the Robotont, you will need to connect your laptop to the same network your Robotont is broadcasting. You will find the number of your robot on its onboard computer. Your robot’s Wi-Fi network will be named <code class="docutils literal notranslate"><span class="pre">robotont-X</span></code>, where X is the number of your Robotont. Ask an instructor for the Wi-Fi password.</p></li>
+<li><p>To make the robot move according to our Twist message, we will be using something called distributed ROS. Distributed ROS allows us to keep running the code in the laptop as we have been doing so far, but makes it so the laptop and the Robotont share a ROS environment. This means that if we publish moving commands to the <cite>cmd_vel</cite> topic, the robot will move because it is listening to the <cite>cmd_vel</cite> topic.</p></li>
+</ol>
+<p>Find out how to make the connection between the laptop and the Robotont from the following video tutorial.</p>
+<p><a class="reference external" href="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/UNICO/FDRenderer/index.html?LearningNugget=30a484cbb65249828887d1055dd87278&amp;Language=EN&amp;FDEP=true">Distributed ROS</a></p>
+<iframe class="nugget" src="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/UNICO/FDRenderer/index.html?LearningNugget=30a484cbb65249828887d1055dd87278&Language=EN&FDEP=true"></iframe><ol class="arabic simple" start="3">
+<li><p>If you have successfully set up distributed ROS, you can now run your code on the laptop and the Robotont will move. Rosmaster is already running on the robot, so you can simply use the <cite>rosrun</cite> command as before.</p></li>
+<li><p>Play around with different Twist messages and make your robot drive in either a square, circle or triangle.</p></li>
+</ol>
+<p><strong>Show the robot driving the geometric shape to an instructor.</strong></p>
+</section>
+<section id="writing-a-subscriber">
+<h2>Writing a Subscriber<a class="headerlink" href="#writing-a-subscriber" title="Permalink to this headline">¶</a></h2>
+<p>In order to receive messages published by a publisher, we need to add a subscriber to our code.
+We will implement a very simple subscriber that can receive information about AR markers published by the <cite>ar_track_alvar</cite> node.</p>
+<ol class="arabic">
+<li><p>In the laptop (not on the robot), start the launch file created in the previous section, <code class="docutils literal notranslate"><span class="pre">camera_ar_track.launch</span></code> to start the laptop’s webcam and launch <cite>ar_track_alvar</cite>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch ar_control_robotont ar_control.launch
+</pre></div>
+</div>
+</li>
+<li><p>Now <cite>ar_track_alvar</cite> is publishing information about AR markers detected in the laptop’s webcam frame.</p></li>
+</ol>
+<p>Now we can move on to writing the subscriber. We will be adding more code to <cite>ar_control_node.py</cite>.</p>
+<ol class="arabic">
+<li><p>First, add an import to be able to recognise the message type published by <cite>ar_track_alvar</cite>, AlvarMarkers.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ar_track_alvar_msgs.msg</span> <span class="kn">import</span> <span class="n">AlvarMarkers</span>
+</pre></div>
+</div>
+</li>
+<li><p>We will first add the subscriber and then add the other code necessary to make it run. To create a subscriber, simply call <code class="docutils literal notranslate"><span class="pre">rospy.Subscriber()</span></code> and specify the name of the topic the subscriber should listen to, the message type to expect, and the callback that handles the messages once they are received. Create the subscriber after creating the node but before calling rospy.spin().</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating a node must happen before anything else ROS-related</span>
+<span class="n">rospy</span><span class="o">.</span><span class="n">init_node</span><span class="p">(</span><span class="s2">&quot;ar_control&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create a subscriber to listen to messages published on the ar_pose_marker topic</span>
+<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;Subscribing to ar_pose_marker&quot;</span><span class="p">)</span>
+<span class="n">rospy</span><span class="o">.</span><span class="n">Subscriber</span><span class="p">(</span><span class="s2">&quot;ar_pose_marker&quot;</span><span class="p">,</span> <span class="n">AlvarMarkers</span><span class="p">,</span> <span class="n">ar_message_handler</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Add a callback function for handling AlvarMarkers messages. The input parameter to the callback function contains the last message of type AlvarMarkers that our subscriber received. This callback prints out the ID’s of all detected markers if any are detected in the webcam’s frame, or an informative message if none are detected.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ar_message_handler</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+   <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">markers</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+      <span class="k">for</span> <span class="n">marker</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">markers</span><span class="p">:</span>
+         <span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;Detected marker with ID &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">marker</span><span class="o">.</span><span class="n">id</span><span class="p">))</span>
+
+   <span class="k">else</span><span class="p">:</span>
+      <span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;No AR markers detected.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>That’s it, the subscriber is now complete. In this example, we only printed out the ID’s of detected markers. The other components of the AlvarMarkers message can be accessed in a similar manner. Spend some time experimenting with printing out different components of the AlvarMarkers message.</p>
+<p>Remember, you can see the messages being published on the <cite>ar_pose_marker</cite> topic by running the following in a new terminal window:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rostopic <span class="nb">echo</span> /ar_pose_marker
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Figure out how to print out the x component of the marker’s position, print it out, and show the result to an instructor.</strong></p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ar_remote_control.html" class="btn btn-neutral float-right" title="Advanced task: AR Remote Control" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ar_markers.html" class="btn btn-neutral float-left" title="AR Markers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, University of Tartu, License CC BY-ND-NC
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

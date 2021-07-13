@@ -1,0 +1,293 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2D mapping and navigation on Robotont &mdash; eros4pro training 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/hacks.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3D mapping on Robotont" href="3d_map_robot.html" />
+    <link rel="prev" title="Mapping and navigation in simulated environment" href="2d_map_nav_gazebo.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> eros4pro training
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../day1/index.html">Day 1</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day2/index.html">Day 2</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Day 3</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="android_sensors_and_transforms.html">Connecting Android sensors to ROS transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2d_map_nav_gazebo.html">Mapping and navigation in simulated environment</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2D mapping and navigation on Robotont</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#establish-connection-to-the-robot">Establish connection to the robot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tweaking-ros-navigation-parameters">Tweaking ROS Navigation parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="3d_map_robot.html">3D mapping on Robotont</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day4/index.html">Day 4</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day5/index.html">Day 5</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">eros4pro training</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Day 3</a> &raquo;</li>
+        
+      <li>2D mapping and navigation on Robotont</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/day3/2d_map_nav_robot.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="d-mapping-and-navigation-on-robotont">
+<h1>2D mapping and navigation on Robotont<a class="headerlink" href="#d-mapping-and-navigation-on-robotont" title="Permalink to this headline">¶</a></h1>
+<p>Now that we have tested some SLAM and navigation packages in a simulation, let’s try them out on a real robot - Robotont.</p>
+<section id="establish-connection-to-the-robot">
+<h2>Establish connection to the robot<a class="headerlink" href="#establish-connection-to-the-robot" title="Permalink to this headline">¶</a></h2>
+<p>Since in this section we would need to open serveral terminals, let’s use the distributed ROS advantages and add the <code class="code bash docutils literal notranslate"><span class="name builtin"><span class="pre">export</span></span> <span class="name variable"><span class="pre">ROS_MASTER_URI</span></span><span class="operator"><span class="pre">=</span></span><span class="pre">....</span></code> command to the end of the <code class="code bash docutils literal notranslate"><span class="pre">.bashrc</span></code> file. So that every time you open a new terminal it will be configured to connect to the robot.</p>
+<ol class="arabic simple">
+<li><p>Open <code class="code bash docutils literal notranslate"><span class="pre">.bashrc</span></code> for editing:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gedit ~/.bashrc
+</pre></div>
+</div>
+<ol class="arabic">
+<li><p>Add the line <code class="code bash docutils literal notranslate"><span class="name builtin"><span class="pre">export</span></span> <span class="name variable"><span class="pre">ROS_MASTER_URI</span></span><span class="operator"><span class="pre">=</span></span><span class="pre">http://192.168.200.XXX:11311</span></code> to the end of the file. NB! substitute the <strong>XXX</strong> with your robot number!</p></li>
+<li><p>First, log into the robot using an SSH connection and start the mapping and localization (gmapping):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos 2d_slam_create_map.launch
+</pre></div>
+</div>
+</li>
+<li><p>Now let’s open up another terminal and start the teleoperation node. When ROS_MASTER_URI is succesfully set in the .bashrc file, you should be able to control the robot now.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+</pre></div>
+</div>
+</li>
+<li><p>To visualize the mapping, you can open up rviz and manually add displays as we did for simulated robot, or you can also use a preconfigured launch file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos 2d_mapping_display.launch
+</pre></div>
+</div>
+</li>
+<li><p>To save the map and run amcl, use the same commands as you did with simulated robot.</p></li>
+<li><p>To run the navigation on the Robotont, we have prepared a custom launch file. So, instead of the move_base.launch, we run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos 2d_slam_navigation.launch
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="tweaking-ros-navigation-parameters">
+<h2>Tweaking ROS Navigation parameters<a class="headerlink" href="#tweaking-ros-navigation-parameters" title="Permalink to this headline">¶</a></h2>
+<p>Now that you have the experience of how navigation works in ROS,
+let’s try tuning some parameters to improve (or not) the navigation software.</p>
+<p>In your robotont_navigation configuration folder,
+the relevant files are those that begin with <em>costmap_</em> and <em>planner_</em>.</p>
+<p>From these files, you can configure
+how your robot uses the navigation stack.
+The most important file here for you is <em>planner_local_params.yaml</em>.
+From this file, you can tune the parameters for the planner.
+Reference can be found here: <a class="reference external" href="http://wiki.ros.org/base_local_planner">http://wiki.ros.org/base_local_planner</a> and here: <a class="reference external" href="http://wiki.ros.org/teb_local_planner">http://wiki.ros.org/teb_local_planner</a>.</p>
+<ol class="arabic">
+<li><p>Open a new terminal and log into the robot via SSH. Use roscd to go to the <code class="code bash docutils literal notranslate"><span class="pre">robotont_navigation/config</span></code> package.</p></li>
+<li><p>Now use <code class="code bash docutils literal notranslate"><span class="pre">nano</span></code> to edit some of the configuration files to configure the planners
+and make it work better.</p>
+<p>What if you would change acceleration limits?
+What if you would try to increase or decrease the goal tolerance?
+What if you changed local and global map sizes in the launch file?
+You can use ROS Wiki to see what the parameters do and make the
+robot navigate more accurately.</p>
+</li>
+<li><p>To test your new configuration, relaunch the <code class="code bash docutils literal notranslate"><span class="pre">2d_slam_navigation.launch</span></code>.</p></li>
+<li><p>If you are satisfied with the performance of your navigation,
+congratulations!</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="3d_map_robot.html" class="btn btn-neutral float-right" title="3D mapping on Robotont" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="2d_map_nav_gazebo.html" class="btn btn-neutral float-left" title="Mapping and navigation in simulated environment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, University of Tartu, License CC BY-ND-NC
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

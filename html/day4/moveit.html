@@ -1,0 +1,249 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Motion planning and MoveIt, MoveIt GUI &mdash; eros4pro training 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/hacks.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Kinematic descriptions with URDF/XACRO and generating MoveIt configuration packages" href="urdf.html" />
+    <link rel="prev" title="Installing xArm7 packages for ROS Noetic" href="xarm_ros_setup.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> eros4pro training
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../day1/index.html">Day 1</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day2/index.html">Day 2</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day3/index.html">Day 3</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Day 4</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="xarm7_xarmstudio.html">xArm7 safety and xArmStudio live control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xarm_ros_setup.html">Installing xArm7 packages for ROS Noetic</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Motion planning and MoveIt, MoveIt GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="urdf.html">Kinematic descriptions with URDF/XACRO and generating MoveIt configuration packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="move_group_interface.html">MoveGroup C++ interface for programming the manipulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gripper_control.html">Action Client for opening/closing the gripper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pick_place_task.html">Pick-and-place task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multirobot_mp.html">MoveIt for multi-robot systems</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day5/index.html">Day 5</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">eros4pro training</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Day 4</a> &raquo;</li>
+        
+      <li>Motion planning and MoveIt, MoveIt GUI</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/day4/moveit.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="motion-planning-and-moveit-moveit-gui">
+<h1>Motion planning and MoveIt, MoveIt GUI<a class="headerlink" href="#motion-planning-and-moveit-moveit-gui" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/RoboNuggets/FDRenderer/index.html?LearningNugget=3956ed745d2641ed9d1c821f63d3973c&amp;Language=EN&amp;FDEP=true">Motion Planning and ROS MoveIt</a></p>
+<iframe class="nugget" src="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/RoboNuggets/FDRenderer/index.html?LearningNugget=3956ed745d2641ed9d1c821f63d3973c&Language=EN&FDEP=true"></iframe><p>Let’s learn the specifics of the MoveIt GUI on a digital twin of the robot. We can start the digital twin with the following launch-file.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch xarm7_gripper_moveit_config demo.launch
+</pre></div>
+</div>
+<p>The following learning nugget demonstrates the main features of MoveIt GUI. Even though everything is exemplified using a Franka Emika Panda manipulator, MoveIt is universal to all robot manipulators, so we can practice the same concepts with the digital twin of the xArm7.</p>
+<p><a class="reference external" href="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/RoboNuggets/FDRenderer/index.html?LearningNugget=a9a1349f5c4f456b9c699c0264121233&amp;Language=EN&amp;FDEP=true">MoveIt GUI</a></p>
+<iframe class="nugget" src="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/RoboNuggets/FDRenderer/index.html?LearningNugget=a9a1349f5c4f456b9c699c0264121233&Language=EN&FDEP=true"></iframe><p>Next let’s start MoveIt GUI for controlling the real xArm7:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch xarm7_gripper_moveit_config realMove_exec.launch robot_ip:<span class="o">=</span>&lt;your controller box LAN IP address&gt;
+</pre></div>
+</div>
+<p>As a first step we need to make sure that the robot would not collide with the desk/cart it is mounted to. We can use the Scene Objects tab in RViz Motion Planning to add a box (size 2,0; 0,2; 2,0) to represent the cart that the xArm7 should avoid when planning its motions. Use the ”+” button to add the box, slide it into place, and hit “publish” to make the box truly a component of the robot’s environment. The final view of the robot and its environment should look similar to this figure.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/xarm_platform.png"><img alt="../_images/xarm_platform.png" src="../_images/xarm_platform.png" style="width: 600pt;" /></a>
+</figure>
+<p>Try planning to different poses for the manipulator and get a feel of how the robot behaves in the real world.</p>
+<p>Enable E-stop, shut down the MoveIt GUI, and shut down the robot.</p>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="urdf.html" class="btn btn-neutral float-right" title="Kinematic descriptions with URDF/XACRO and generating MoveIt configuration packages" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="xarm_ros_setup.html" class="btn btn-neutral float-left" title="Installing xArm7 packages for ROS Noetic" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, University of Tartu, License CC BY-ND-NC
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

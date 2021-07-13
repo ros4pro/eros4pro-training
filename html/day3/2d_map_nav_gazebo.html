@@ -1,0 +1,387 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Mapping and navigation in simulated environment &mdash; eros4pro training 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/hacks.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2D mapping and navigation on Robotont" href="2d_map_nav_robot.html" />
+    <link rel="prev" title="Connecting Android sensors to ROS transforms" href="android_sensors_and_transforms.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> eros4pro training
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../day1/index.html">Day 1</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day2/index.html">Day 2</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Day 3</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="android_sensors_and_transforms.html">Connecting Android sensors to ROS transforms</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Mapping and navigation in simulated environment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#setting-up-ros-navigation-and-robotont-in-gazebo-simulation">Setting up ROS Navigation and Robotont in Gazebo simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#teleoperating-the-robot-in-gazebo-and-visualization-in-rviz">Teleoperating the robot in Gazebo and visualization in RViz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-2d-map-of-an-environment">Creating a 2D map of an environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#navigating-the-maze-by-sending-navigation-goals-in-rviz">Navigating the maze by sending navigation goals in RViz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sending-navigation-goals-with-a-ros-node">Sending navigation goals with a ROS node</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="2d_map_nav_robot.html">2D mapping and navigation on Robotont</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3d_map_robot.html">3D mapping on Robotont</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day4/index.html">Day 4</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day5/index.html">Day 5</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">eros4pro training</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Day 3</a> &raquo;</li>
+        
+      <li>Mapping and navigation in simulated environment</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/day3/2d_map_nav_gazebo.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="mapping-and-navigation-in-simulated-environment">
+<h1>Mapping and navigation in simulated environment<a class="headerlink" href="#mapping-and-navigation-in-simulated-environment" title="Permalink to this headline">¶</a></h1>
+<p>In this workshop, we aim to demonstrate some advanced robotics capabilities of ROS and its Navigation.
+In order to prevent unwanted damage to the robot or it’s surroundings, we first use a Robotont in a simulated world.
+After everything looks good in the simulation, we try the same on a real hardware.</p>
+<section id="setting-up-ros-navigation-and-robotont-in-gazebo-simulation">
+<h2>Setting up ROS Navigation and Robotont in Gazebo simulation<a class="headerlink" href="#setting-up-ros-navigation-and-robotont-in-gazebo-simulation" title="Permalink to this headline">¶</a></h2>
+<p>This workshop relies on several ROS packages, which should already be preinstalled on your portable USB drive. Nevertheless, it does not hurt to enter the apt command again to update the dependencies. The apt commands to install Navigation and some other relevant packages using apt is as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt update
+sudo apt install ros-noetic-navigation ros-noetic-move-base ros-noetic-teb-local-planner ros-noetic-amcl ros-noetic-map-server ros-noetic-gmapping ros-noetic-realsense2-description
+</pre></div>
+</div>
+<p>Additionally, we need the following packages to exist in our catkin workspace:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>robotont_nuc_description
+robotont_navigation
+robotont_demos
+robotont_gazebo
+</pre></div>
+</div>
+<p>In case you have messed up your workspace, here is a copy-paste 4-liner for you:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/catkin_ws
+vcs import --input https://raw.githubusercontent.com/robotont/robotont-setup/noetic-devel/ansible/roles/catkin/files_for_laptops/.rosinstall src
+catkin build
+<span class="nb">source</span> devel/setup.bash
+</pre></div>
+</div>
+<p>Next let’s bring up a Gazebo simulation environment with the Robotont. There are different Robotont configurations available but in this workshop, we are going to use two different configurations: <code class="code bash docutils literal notranslate"><span class="pre">robotont_gazebo_nuc</span></code> and <code class="code bash docutils literal notranslate"><span class="pre">robotont_gazebo_lidar</span></code>.</p>
+<p>Let’s launch the first configuration, <code class="code bash docutils literal notranslate"><span class="pre">robotont_gazebo_nuc</span></code>, in a pre-made simulated world that represents a simple maze. Enter the following roslaunch command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo world_minimaze.launch
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><cite>Gazebo may update its model database when it is started for the first time. This may take a few minutes.</cite></p>
+</div>
+<p>After a successful launch, the window that pops open should look similar to the <a class="reference internal" href="#fig-gazebo-minimaze"><span class="std std-numref">Fig. 4</span></a> below.</p>
+<figure class="align-center" id="fig-gazebo-minimaze">
+<a class="reference internal image-reference" href="../_images/day3_gazebo_minimaze.png"><img alt="../_images/day3_gazebo_minimaze.png" src="../_images/day3_gazebo_minimaze.png" style="width: 500pt;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Gazebo window with walls to make up a maze and a Robotont model.</span><a class="headerlink" href="#fig-gazebo-minimaze" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="teleoperating-the-robot-in-gazebo-and-visualization-in-rviz">
+<h2>Teleoperating the robot in Gazebo and visualization in RViz<a class="headerlink" href="#teleoperating-the-robot-in-gazebo-and-visualization-in-rviz" title="Permalink to this headline">¶</a></h2>
+<p>Now, let’s explore the Gazebo world and see how ROS handles simulated worlds.
+We can use keyboard-based teleoperation for moving the Robotont.
+Open a new terminal window and enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+</pre></div>
+</div>
+<p>Recall the Day 1 and Day 2 for the keyboard controls and drive the robot through the maze.</p>
+<p>Robots use cameras and laser sensors to perceive their immediate surroundings. As we already know, In ROS we can use RViz to visualize various sensory information. So start up RViz and add the following Display types:</p>
+<ul class="simple">
+<li><p>RobotModel</p></li>
+<li><p>DepthCloud</p></li>
+<li><p>Image</p></li>
+</ul>
+<p>After the Displays are properly configured, the view in RViz should look similar to <a class="reference internal" href="#fig-robotont-in-rviz"><span class="std std-numref">Fig. 5</span></a>. Go ahead and save the RViz configuration for future use (<em>File</em>-&gt;*Save*).</p>
+<p>Try to navigate the maze by only looking at the RViz (not the Gazebo) window. When done, shut down all the nodes.</p>
+<figure class="align-center" id="fig-robotont-in-rviz">
+<a class="reference internal image-reference" href="../_images/day3_robotont_in_rviz.png"><img alt="../_images/day3_robotont_in_rviz.png" src="../_images/day3_robotont_in_rviz.png" style="width: 500pt;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Visualizing Robotont and its sensor feeds in RViz</span><a class="headerlink" href="#fig-robotont-in-rviz" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="creating-a-2d-map-of-an-environment">
+<h2>Creating a 2D map of an environment<a class="headerlink" href="#creating-a-2d-map-of-an-environment" title="Permalink to this headline">¶</a></h2>
+<p>Now we are ready to test out mapping and navigating a known map.</p>
+<ol class="arabic">
+<li><p>Launch the Gazebo world-file in order to simulate the Robotont in the environment.
+However, this time, let’s use a Robotont with a 2D lidar as it will has wider field of view than that of our 3D camera.
+This helps the mapping and localization algorithms to create a maps and localize with higher accuracy for now.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo world_minimaze.launch model:<span class="o">=</span>robotont_gazebo_lidar
+</pre></div>
+</div>
+</li>
+<li><p>In the RViz configuration, we can disable (uncheck) the Image and DepthCloud as this Robotont configuration does not contain the depth camera.
+However, let’s add and configure LaserScan to visualize the data from the 2D lidar.</p></li>
+</ol>
+<p>#. Launch the SLAM in order to map the environment using <a class="reference external" href="http://wiki.ros.org/gmapping">gmapping</a> algorithm:
+.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_demos gmapping.launch
+</pre></div>
+</div>
+<ol class="arabic">
+<li><p>Now it’s time to add Map display plugin with topic: <code class="code bash docutils literal notranslate"><span class="pre">/map</span></code> to our RViz Displays and change the Global Options &gt; Fixed Frame to <code class="code bash docutils literal notranslate"><span class="pre">map</span></code>.</p></li>
+<li><p>You should see a fragment of a map which is generated based on the current field of view of the robot.
+Use the keyboard-based teleoperation to drive through the entire maze to develop a full map similar to <a class="reference internal" href="#fig-robotont-mapping"><span class="std std-numref">Fig. 6</span></a>.</p></li>
+<li><p>When the map appears sufficiently complete, run the map_saver node to save your map using the following command (it will save the map in your working directory under the name mymap):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun map_server map_saver -f mymap
+</pre></div>
+</div>
+</li>
+<li><p>After saving the map, shut down all the nodes.</p></li>
+</ol>
+<figure class="align-center" id="fig-robotont-mapping">
+<a class="reference internal image-reference" href="../_images/day3_robotont_mapping.png"><img alt="../_images/day3_robotont_mapping.png" src="../_images/day3_robotont_mapping.png" style="width: 500pt;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Mapping with Robotont</span><a class="headerlink" href="#fig-robotont-mapping" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="navigating-the-maze-by-sending-navigation-goals-in-rviz">
+<h2>Navigating the maze by sending navigation goals in RViz<a class="headerlink" href="#navigating-the-maze-by-sending-navigation-goals-in-rviz" title="Permalink to this headline">¶</a></h2>
+<p>Next, let’s try to automatically navigate the map, i.e. use some motion planning to move the robot.</p>
+<ol class="arabic">
+<li><p>Launch the Robotont with 2D lidar in a minimaze world.</p></li>
+<li><p>Use the the map_server to publish the previously generated map.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun map_server map_server mymap.yaml
+</pre></div>
+</div>
+</li>
+<li><p>Use amcl to start the localization of the robot on the map</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun amcl amcl
+</pre></div>
+</div>
+</li>
+<li><p>For motion planning, we need to launch the following and wait until “odom received!” is printed on the screen.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_navigation move_base.launch
+</pre></div>
+</div>
+</li>
+<li><p>Open RViz with Displays including Map, LaserScan, and RobotModel.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>It is very likely that amcl has not placed the Robotont in the right place on the map. If this is, indeed, the case, then use the <strong>2D Pose Estimate</strong> button in RViz to show on the map where the Robotont actually is.</p>
+</div>
+</li>
+<li><p>Next, use the 2D Nav Goal button in RViz to set navigation goals for the Robotont on the map. Is the robot able to navigate the entire maze in one go?</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To better interpret motion planning, feel free to add Path to RViz displays. There are 3 different types of motion plans you can visualize as Paths. Try adding three Paths and give each of them a different topic and color.</p>
+</div>
+</li>
+<li><p>There are several parameters that can be tweaked in order to change the <code class="code bash docutils literal notranslate"><span class="pre">move_base</span></code> performance. In <code class="code bash docutils literal notranslate"><span class="pre">robotont_navigation</span></code> package, these parameters are grouped in <code class="code bash docutils literal notranslate"><span class="pre">.yaml</span></code> files, which can be found from the <code class="code bash docutils literal notranslate"><span class="pre">config</span></code> folder. Feel free to make changes there, but remember to relaunch <code class="code bash docutils literal notranslate"><span class="pre">move_base.launch</span></code> for the changes to take effect.</p></li>
+</ol>
+</section>
+<section id="sending-navigation-goals-with-a-ros-node">
+<h2>Sending navigation goals with a ROS node<a class="headerlink" href="#sending-navigation-goals-with-a-ros-node" title="Permalink to this headline">¶</a></h2>
+<p>While we have just witnessed yet another powerful feature of RViz - the ability to let users specify the navigation goal for a mobile robot -, in  most cases, the navigation goal for a robot is sent by another program (e.g., a decision making node). Therefore, we will next create a ROS node that is able to send navigation goals to the Robotont.</p>
+<p>Follow <a class="reference external" href="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/RoboNuggets/FDRenderer/index.html?LearningNugget=10ebac8b02d746ebbca1107426f4fff8&amp;Language=EN&amp;FDEP=true">this</a> digital learning nugget up to the 5 min 40 sec mark to create a new package and node to send goals to the Robotont. The learning nugget exemplifies the code of making a robot move to a location of (0.2; 1.0).</p>
+<p>Use the know-how from the video to create a node that commands the robot to navigate the complete maze.</p>
+<p>In order to test the solution, the Gazebo simulation and the ROS Navigation must be running. That means:</p>
+<ol class="arabic simple">
+<li><p>Launch the minimaze Gazebo world with the Robotont with 2D lidar.</p></li>
+<li><p>Start map_server.</p></li>
+<li><p>Start amcl localization.</p></li>
+<li><p>Start move_base for motion planning.</p></li>
+<li><p>Verify if, in RViz, the robot is located approximately at the same position on the map as it is in Gazebo. If not, try to put it roughly in the same position using the <strong>2D Pose Estimate</strong> button in RViz.</p></li>
+<li><p>Run the node that sends navigation goals to the Robotont.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="2d_map_nav_robot.html" class="btn btn-neutral float-right" title="2D mapping and navigation on Robotont" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="android_sensors_and_transforms.html" class="btn btn-neutral float-left" title="Connecting Android sensors to ROS transforms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, University of Tartu, License CC BY-ND-NC
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

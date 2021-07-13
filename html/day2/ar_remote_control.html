@@ -1,0 +1,283 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Advanced task: AR Remote Control &mdash; eros4pro training 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/hacks.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Advanced task: Maze Navigation using AR Markers" href="maze_navigation.html" />
+    <link rel="prev" title="Publisher &amp; Subscriber" href="messages.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> eros4pro training
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../day1/index.html">Day 1</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Day 2</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="catkin_workspace.html">Catkin Workspaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="catkin_package.html">Creating Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="node.html">Creating Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="launch.html">Launch file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_markers.html">AR Markers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages.html">Publisher &amp; Subscriber</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Advanced task: AR Remote Control</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-convert-quaternions-to-euler-angles">How to convert quaternions to Euler angles?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-1-make-the-robot-move-forward">Step 1: Make the robot move forward</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-2-add-backwards-movement">Step 2: Add backwards movement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-3-make-the-robot-turn">Step 3: Make the robot turn</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="maze_navigation.html">Advanced task: Maze Navigation using AR Markers</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day3/index.html">Day 3</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day4/index.html">Day 4</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day5/index.html">Day 5</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">eros4pro training</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Day 2</a> &raquo;</li>
+        
+      <li>Advanced task: AR Remote Control</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/day2/ar_remote_control.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="advanced-task-ar-remote-control">
+<h1>Advanced task: AR Remote Control<a class="headerlink" href="#advanced-task-ar-remote-control" title="Permalink to this headline">¶</a></h1>
+<p>Now we will explore the possibilities of AR markers a little further by implementing an AR marker based steering wheel. By moving an AR marker in front of a laptop webcam, we will be remotely controlling a Robotont robot.</p>
+<p>Your task is to use the skills learnt so far to write a program that listens to messages on the <cite>ar_pose_marker</cite> topic and uses the orientation information of an AR marker to determine what kind of a Twist message to publish to the <cite>cmd_vel</cite> topic.</p>
+<p>You can use any components of the orientation information that you wish to build your steering wheel, but one option is to make the pitch movement of the marker correspond to forward-backward motion of the robot, and the roll movement to control the rotation of the robot.</p>
+<a class="reference internal image-reference" href="../_images/roll_pitch_yaw_1.png"><img alt="../_images/roll_pitch_yaw_1.png" src="../_images/roll_pitch_yaw_1.png" style="width: 200pt;" /></a>
+<p>To refresh your memory on AR markers, their orientation info and quaternions, refer back to <a class="reference internal" href="ar_markers.html#ar-markers"><span class="std std-ref">AR Markers</span></a>, specifically the <cite>Orientation</cite> section.</p>
+<section id="how-to-convert-quaternions-to-euler-angles">
+<h2>How to convert quaternions to Euler angles?<a class="headerlink" href="#how-to-convert-quaternions-to-euler-angles" title="Permalink to this headline">¶</a></h2>
+<p>Working with quaternions to control a robot’s speed is inconvenient, since it is hard to discern any kind of pattern in their values when moving the AR marker in front of the camera.
+To control the robot, we need to convert the orientation of the marker into linear and angular speed, but it is hard to do if we cannot be sure what is the range of the values we wish to convert.
+This is why it is very beneficial to convert the quaternions to Euler angles.</p>
+<p>To convert quaternions to Euler angles in Python code, the <cite>tf</cite> library, specifically its <cite>transformations</cite> module can be used.
+It includes a function <cite>euler_from_quaternion()</cite> which takes as input a quaternion and outputs a list of Euler angles.
+A simple usage example of <cite>tf.transformations.euler_from_quaternion()</cite> can be seen below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tf</span>
+
+<span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Callback for a ROS subscriber subscribing to ar_pose_marker</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">marker</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">markers</span><span class="p">:</span>
+        <span class="n">marker_ori</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">marker</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">x</span><span class="p">,</span>
+            <span class="n">marker</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">y</span><span class="p">,</span>
+            <span class="n">marker</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">z</span><span class="p">,</span>
+            <span class="n">marker</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">pose</span><span class="o">.</span><span class="n">orientation</span><span class="o">.</span><span class="n">w</span><span class="p">)</span>
+
+        <span class="n">euler</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">transformations</span><span class="o">.</span><span class="n">euler_from_quaternion</span><span class="p">(</span><span class="n">marker_ori</span><span class="p">)</span>
+        <span class="n">roll</span> <span class="o">=</span> <span class="n">euler</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">yaw</span> <span class="o">=</span> <span class="n">euler</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">pitch</span> <span class="o">=</span> <span class="n">euler</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="step-1-make-the-robot-move-forward">
+<h2>Step 1: Make the robot move forward<a class="headerlink" href="#step-1-make-the-robot-move-forward" title="Permalink to this headline">¶</a></h2>
+<p>Using the code snippet provided above, use one of the Euler angles (either roll, pitch or yaw) of the marker and convert it to linear speed to make the robot move forward. Make it so the robot’s speed is dependant on the size of the marker’s angle.</p>
+</section>
+<section id="step-2-add-backwards-movement">
+<h2>Step 2: Add backwards movement<a class="headerlink" href="#step-2-add-backwards-movement" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes you might need to drive backwards. Make it so that when the marker is tilted the opposite way, the robot moves backwards.</p>
+</section>
+<section id="step-3-make-the-robot-turn">
+<h2>Step 3: Make the robot turn<a class="headerlink" href="#step-3-make-the-robot-turn" title="Permalink to this headline">¶</a></h2>
+<p>Now that the robot is capable of moving forwards and backwards, it is time to take another component from the Euler angles and convert the angle to angular speed in order to make the robot turn either left or right, depending on the orientation of the marker.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="maze_navigation.html" class="btn btn-neutral float-right" title="Advanced task: Maze Navigation using AR Markers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="messages.html" class="btn btn-neutral float-left" title="Publisher &amp; Subscriber" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, University of Tartu, License CC BY-ND-NC
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

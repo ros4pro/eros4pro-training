@@ -1,0 +1,252 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Day 3 &mdash; eros4pro training 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/hacks.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Connecting Android sensors to ROS transforms" href="android_sensors_and_transforms.html" />
+    <link rel="prev" title="Advanced task: Maze Navigation using AR Markers" href="../day2/maze_navigation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> eros4pro training
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../day1/index.html">Day 1</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day2/index.html">Day 2</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Day 3</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="android_sensors_and_transforms.html">Connecting Android sensors to ROS transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2d_map_nav_gazebo.html">Mapping and navigation in simulated environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2d_map_nav_robot.html">2D mapping and navigation on Robotont</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3d_map_robot.html">3D mapping on Robotont</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day4/index.html">Day 4</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day5/index.html">Day 5</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">eros4pro training</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Day 3</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/day3/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="day-3">
+<h1>Day 3<a class="headerlink" href="#day-3" title="Permalink to this headline">¶</a></h1>
+<p>Slides: <a class="reference external" href="https://docs.google.com/presentation/d/1oP-Rf2GyilrcbsQTYjdMW3U8NDuqNZOYOokhGWJtFw0/view">SLAM and transforms in ROS</a></p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="android_sensors_and_transforms.html">Connecting Android sensors to ROS transforms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="android_sensors_and_transforms.html#setting-up-an-android-phone-as-a-sensor">Setting up an Android phone as a sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="android_sensors_and_transforms.html#visualizing-imu-data-in-rviz">Visualizing IMU data in RViz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="android_sensors_and_transforms.html#creating-a-static-transform">Creating a static transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="android_sensors_and_transforms.html#dynamic-transform">Dynamic transform</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="2d_map_nav_gazebo.html">Mapping and navigation in simulated environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="2d_map_nav_gazebo.html#setting-up-ros-navigation-and-robotont-in-gazebo-simulation">Setting up ROS Navigation and Robotont in Gazebo simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2d_map_nav_gazebo.html#teleoperating-the-robot-in-gazebo-and-visualization-in-rviz">Teleoperating the robot in Gazebo and visualization in RViz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2d_map_nav_gazebo.html#creating-a-2d-map-of-an-environment">Creating a 2D map of an environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2d_map_nav_gazebo.html#navigating-the-maze-by-sending-navigation-goals-in-rviz">Navigating the maze by sending navigation goals in RViz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2d_map_nav_gazebo.html#sending-navigation-goals-with-a-ros-node">Sending navigation goals with a ROS node</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="2d_map_nav_robot.html">2D mapping and navigation on Robotont</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="2d_map_nav_robot.html#establish-connection-to-the-robot">Establish connection to the robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2d_map_nav_robot.html#tweaking-ros-navigation-parameters">Tweaking ROS Navigation parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="3d_map_robot.html">3D mapping on Robotont</a></li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="android_sensors_and_transforms.html" class="btn btn-neutral float-right" title="Connecting Android sensors to ROS transforms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../day2/maze_navigation.html" class="btn btn-neutral float-left" title="Advanced task: Maze Navigation using AR Markers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, University of Tartu, License CC BY-ND-NC
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

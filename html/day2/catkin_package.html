@@ -1,0 +1,269 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Creating Packages &mdash; eros4pro training 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/hacks.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Creating Nodes" href="node.html" />
+    <link rel="prev" title="Catkin Workspaces" href="catkin_workspace.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> eros4pro training
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../day1/index.html">Day 1</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Day 2</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="catkin_workspace.html">Catkin Workspaces</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Creating Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="node.html">Creating Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="launch.html">Launch file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_markers.html">AR Markers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages.html">Publisher &amp; Subscriber</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_remote_control.html">Advanced task: AR Remote Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maze_navigation.html">Advanced task: Maze Navigation using AR Markers</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day3/index.html">Day 3</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day4/index.html">Day 4</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day5/index.html">Day 5</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">eros4pro training</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Day 2</a> &raquo;</li>
+        
+      <li>Creating Packages</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/day2/catkin_package.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="creating-packages">
+<h1>Creating Packages<a class="headerlink" href="#creating-packages" title="Permalink to this headline">¶</a></h1>
+<p>In this exercise, we will create our own ROS package which we will continuously improve during today’s training. Eventually it will enable us to control the Robotont robot with the help of AR markers in the environment.</p>
+<p>We already have a workspace, and have even used <code class="docutils literal notranslate"><span class="pre">catkin</span> <span class="pre">build</span></code> a few times. Now we will create our own package to run some custom code in the later parts of this training.</p>
+<ol class="arabic">
+<li><p>Your goal is to create a Catkin package that:</p>
+<ul>
+<li><p>has the name <code class="docutils literal notranslate"><span class="pre">ar_control_robotont</span></code></p></li>
+<li><p>has the following dependencies:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>ar_track_alvar_msgs</p></li>
+<li><p>geometry_msgs</p></li>
+<li><p>rospy</p></li>
+<li><p>tf</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p>To find out how to create a Catkin package, visit the ROS Wiki: <a class="reference external" href="http://wiki.ros.org/ROS/Tutorials/CreatingPackage">Create a Package</a> section and <a class="reference external" href="https://catkin-tools.readthedocs.io/en/latest/verbs/catkin_create.html">catkin_tools</a>  documentation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Remember that all packages should be created inside a workspace’s src directory.</p>
+</div>
+</li>
+<li><p>If you were successful at creating the package then there will be a folder named <code class="docutils literal notranslate"><span class="pre">ar_control_robotont</span></code> inside the src directory. Navigate into that folder and open the <code class="docutils literal notranslate"><span class="pre">package.xml</span></code> file for editing.</p></li>
+<li><p>Change the description, version, author and other information as you like.</p></li>
+<li><p>Finally, build the package with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>catkin build
+</pre></div>
+</div>
+</li>
+<li><p>Show the created package to the instructor.</p></li>
+</ol>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>If you forgot to add a dependency when creating a package, you can add additional dependencies in the <code class="docutils literal notranslate"><span class="pre">package.xml</span></code> file.</p>
+</div>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="node.html" class="btn btn-neutral float-right" title="Creating Nodes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="catkin_workspace.html" class="btn btn-neutral float-left" title="Catkin Workspaces" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, University of Tartu, License CC BY-ND-NC
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

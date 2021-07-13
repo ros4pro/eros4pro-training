@@ -1,0 +1,5 @@
+doctrees/*
+.vscode/
+*.swp
+source/_build/
+*.pyc

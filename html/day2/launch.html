@@ -1,0 +1,381 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Launch file &mdash; eros4pro training 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/hacks.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="AR Markers" href="ar_markers.html" />
+    <link rel="prev" title="Creating Nodes" href="node.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> eros4pro training
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../day1/index.html">Day 1</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Day 2</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="catkin_workspace.html">Catkin Workspaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="catkin_package.html">Creating Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="node.html">Creating Nodes</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Launch file</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#setup">Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#writing-the-launch-file">Writing the launch file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#connect-the-topics">Connect the topics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#help-errors">Help, errors!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#visualise-the-result">Visualise the result</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ar_markers.html">AR Markers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages.html">Publisher &amp; Subscriber</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_remote_control.html">Advanced task: AR Remote Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maze_navigation.html">Advanced task: Maze Navigation using AR Markers</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day3/index.html">Day 3</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day4/index.html">Day 4</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day5/index.html">Day 5</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">eros4pro training</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Day 2</a> &raquo;</li>
+        
+      <li>Launch file</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/day2/launch.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="launch-file">
+<h1>Launch file<a class="headerlink" href="#launch-file" title="Permalink to this headline">¶</a></h1>
+<p>When you just need to run one node, then it is easy to call <cite>rosrun</cite> on your node and it starts without problems.
+Things get more complicated when you need to run several nodes.
+While you could in theory just run them with <cite>rosrun</cite> one after the other, it will quickly get tedious, even more so when you need to supply some parameters to the nodes upon running them.</p>
+<p>The solution to this problem are <strong>launch files</strong>.
+Launch files are useful for running multiple nodes simultaneously with a single <code class="docutils literal notranslate"><span class="pre">roslaunch</span></code> command.
+They can also be used to read parameters into the parameter server.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <cite>roslaunch</cite> command automatically starts rosmaster if it isn’t already running. This means you can skip the <cite>roscore</cite> command.</p>
+</div>
+<p>In the next sections of today’s training we need to access the laptop’s webcam and use <cite>ar_track_alvar</cite> to detect AR markers in the frame.
+In this section we will be creating a launch file that we will need to accomplish that.
+But first, we need to do some setup to get the webcam running properly.</p>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>To access the laptop’s webcam in ROS, we need to install an additional package. To do this, run the following command in a terminal window:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install ros-noetic-usb-cam
+</pre></div>
+</div>
+</li>
+<li><p>In order to confirm that usb_cam has been properly installed, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch usb_cam usb_cam-test.launch
+</pre></div>
+</div>
+</li>
+</ol>
+<p>We should now see a new window with video feed from the camera. Open another terminal window and list all the available topics.</p>
+<p>In the terminal window where we launched the camera feed, there is a yellow warning message telling us that the camera calibration file could not be found. Let’s create this file. Ask an instructor for a checkered calibration target.</p>
+<ol class="arabic">
+<li><p>Use <cite>rostopic list</cite> to see what is the namespace for your camera.</p></li>
+<li><p>Run the camera calibration node. Make sure to use the correct topic name and namespace. You can read more about camera calibration <a class="reference external" href="https://wiki.ros.org/camera_calibration/Tutorials/MonocularCalibration">here</a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun camera_calibration cameracalibrator.py --size 8x6 --square <span class="m">0</span>.0405 image:<span class="o">=</span>/usb_cam/image_raw camera:<span class="o">=</span>/usb_cam
+</pre></div>
+</div>
+</li>
+<li><p>Move the calibration target in front of the camera until you can press buttons for <em>calibrate</em>, <em>save</em>, and <em>commit</em>. Note that pressing <em>save</em> can freeze your computer for minutes. This is normal, just wait it out.</p></li>
+<li><p>Install <cite>ar_track_alvar</cite> as follows:</p></li>
+</ol>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">catkin_ws/src</span></code> folder.</p></li>
+<li><p>Clone the repository for ar_track_alvar and switch to the correct branch by running the terminal commands below</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/rios-ai/ar_track_alvar.git
+<span class="nb">cd</span> ar_track_alvar
+git checkout feature/rios_bug_fix
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</section>
+<section id="writing-the-launch-file">
+<h2>Writing the launch file<a class="headerlink" href="#writing-the-launch-file" title="Permalink to this headline">¶</a></h2>
+<p>The launch file will start four nodes, one of them our own to speed up the workflow later on.
+The main structure of the launch file will be like this:</p>
+<blockquote>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;launch&gt;</span>
+  <span class="nt">&lt;node</span> <span class="na">name=</span><span class="s">&quot;usb_cam&quot;</span> <span class="na">pkg=</span><span class="s">&quot;usb_cam&quot;</span> <span class="na">type=</span><span class="s">&quot;usb_cam_node&quot;</span> <span class="na">output=</span><span class="s">&quot;screen&quot;</span> <span class="nt">&gt;</span>
+    ...parameters...
+  <span class="nt">&lt;/node&gt;</span>
+
+  <span class="nt">&lt;node</span> <span class="na">name=</span><span class="s">&quot;image_view&quot;</span> <span class="na">pkg=</span><span class="s">&quot;image_view&quot;</span> <span class="na">type=</span><span class="s">&quot;image_view&quot;</span> <span class="na">respawn=</span><span class="s">&quot;false&quot;</span> <span class="na">output=</span><span class="s">&quot;screen&quot;</span><span class="nt">&gt;</span>
+    ...parameters...
+  <span class="nt">&lt;/node&gt;</span>
+
+  ...more nodes...
+<span class="nt">&lt;/launch&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>Go through the <a class="reference external" href="https://wiki.ros.org/roslaunch/XML/node">roslaunch wiki on nodes</a> and <a class="reference external" href="https://wiki.ros.org/roslaunch/XML/node">roslaunch wiki on parameters</a> and get familiar with the syntax of a launch file.</p></li>
+<li><p>From the wiki, find the information on:</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>how to use the <code class="docutils literal notranslate"><span class="pre">&lt;node</span> <span class="pre">/&gt;</span></code> tag to run nodes within roslaunch file;</p></li>
+<li><p>how to use the <code class="docutils literal notranslate"><span class="pre">&lt;param</span> <span class="pre">/&gt;</span></code> tag and read parameters to the server.</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>Launch files typically go inside a folder named <code class="docutils literal notranslate"><span class="pre">launch</span></code>. Create this folder inside your package alongside the src folder.</p></li>
+<li><p>Your task is to create a launch file named <code class="docutils literal notranslate"><span class="pre">ar_control.launch</span></code> inside the <code class="docutils literal notranslate"><span class="pre">ar_control_robotont</span></code> package. Implement the following functionality in the launch file:</p></li>
+</ol>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Copy the contents of <code class="docutils literal notranslate"><span class="pre">usb_cam/usb_cam-test.launch</span></code> into your launch file;</p></li>
+<li><p>Integrate the contents of <code class="docutils literal notranslate"><span class="pre">ar_track_alvar/pr2_indiv_no_kinect.launch</span></code> into the launch file;</p></li>
+<li><p>Start the <code class="docutils literal notranslate"><span class="pre">ar_control_robotont</span></code> node.</p></li>
+</ol>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">rospack</span> <span class="pre">find</span> <span class="pre">&lt;package_name&gt;</span></code> command to find the required launch files.</p>
+</div>
+<p>To test your launch file, run the following command in a terminal window:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch ar_control_robotont ar_control.launch
+</pre></div>
+</div>
+</div></blockquote>
+<p>As a result, a window showing the camera feed should open, and the lines your node prints out should appear in the terminal window.</p>
+</section>
+<section id="connect-the-topics">
+<h2>Connect the topics<a class="headerlink" href="#connect-the-topics" title="Permalink to this headline">¶</a></h2>
+<p>If we tried to detect AR markers at this point, it would not work because <cite>ar_track_alvar</cite> is currently looking for the camera image on the topic <cite>/wide_stereo/left/image_color</cite>. In order to let <cite>ar_track_alvar</cite> know where to find the camera frame, we need to change the following lines in the launch file:</p>
+<blockquote>
+<div><div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;arg</span> <span class="na">name=</span><span class="s">&quot;cam_image_topic&quot;</span> <span class="na">default=</span><span class="s">&quot;/wide_stereo/left/image_color&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;arg</span> <span class="na">name=</span><span class="s">&quot;cam_info_topic&quot;</span> <span class="na">default=</span><span class="s">&quot;/wide_stereo/left/camera_info&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Locate these lines in your launch file and figure out what topics we would need to listen to if our camera image comes from the <cite>usb_cam</cite> node started in the same launch file.</p>
+<p>To get some hints, you can run the following commands in separate terminal windows:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch usb_cam usb_cam-test.launch
+rostopic list
+</pre></div>
+</div>
+</div></blockquote>
+<p>The output will give you some ideas what topics exist when <cite>usb_cam</cite> is launched.</p>
+</section>
+<section id="help-errors">
+<h2>Help, errors!<a class="headerlink" href="#help-errors" title="Permalink to this headline">¶</a></h2>
+<p>If you found the correct topics and tested your launch file again, initially the output should look similar to what it was before.
+However, there are now error messages present, telling us that ‘“torso_lift_link” passed to lookupTransform argument target_frame does not exist’.
+This is because we do not have <cite>torso_lift_link</cite>.</p>
+<p>To fix this, make sure that the <cite>output_frame</cite> value in your launch file is identical to <cite>camera_frame_id</cite>. If they are not, find out <cite>camera_frame_id</cite> and replace <cite>torso_lift_link</cite> with this more relevant output frame.</p>
+</section>
+<section id="visualise-the-result">
+<h2>Visualise the result<a class="headerlink" href="#visualise-the-result" title="Permalink to this headline">¶</a></h2>
+<p>Next we will use RViz to visualize both the marker(s) in 3D space and the camera image. Open a new terminal window and run RViz for visualization. To do this, simply type <code class="docutils literal notranslate"><span class="pre">rviz</span></code> into the terminal</p>
+<ol class="arabic simple">
+<li><p>To visualize images from the camera, use the <code class="docutils literal notranslate"><span class="pre">Add</span></code> button to add an Image to your RViz configuration. Make sure to set the correct topic name for the Image.</p></li>
+<li><p>Next, use the <code class="docutils literal notranslate"><span class="pre">Add</span></code> button to add a Marker.</p></li>
+<li><p>Next, use the <code class="docutils literal notranslate"><span class="pre">Add</span></code> button to add a TF.</p></li>
+<li><p>In the Displays panel of RViz, there is a section for Global Options. Change the Fixed Frame to the value specified in your launch file as the output_frame, e.g., usb_cam.</p></li>
+</ol>
+<p>If everything is working, you should see images from the camera in a sub-window in RViz and when you place an AR tag in the camera’s field of view, you should see marker(s) relative to the fixed frame.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ar_markers.html" class="btn btn-neutral float-right" title="AR Markers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="node.html" class="btn btn-neutral float-left" title="Creating Nodes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, University of Tartu, License CC BY-ND-NC
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,380 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Creating Nodes &mdash; eros4pro training 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/hacks.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Launch file" href="launch.html" />
+    <link rel="prev" title="Creating Packages" href="catkin_package.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> eros4pro training
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../day1/index.html">Day 1</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Day 2</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="catkin_workspace.html">Catkin Workspaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="catkin_package.html">Creating Packages</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Creating Nodes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#running-a-node">Running a Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#challenge">Challenge</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="launch.html">Launch file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_markers.html">AR Markers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages.html">Publisher &amp; Subscriber</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_remote_control.html">Advanced task: AR Remote Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maze_navigation.html">Advanced task: Maze Navigation using AR Markers</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day3/index.html">Day 3</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day4/index.html">Day 4</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day5/index.html">Day 5</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">eros4pro training</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Day 2</a> &raquo;</li>
+        
+      <li>Creating Nodes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/day2/node.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="creating-nodes">
+<h1>Creating Nodes<a class="headerlink" href="#creating-nodes" title="Permalink to this headline">¶</a></h1>
+<p>In this exercise, you will create a simple ROS node inside your new <code class="docutils literal notranslate"><span class="pre">ar_control_robotont</span></code> package.
+A ROS node is an executable code file inside a ROS package.
+Nodes can exchange information with other nodes.</p>
+<p>For reference, take a look at <a class="reference external" href="http://wiki.ros.org/ROS/Tutorials/UnderstandingNodes">Understanding Nodes</a>.</p>
+<ol class="arabic">
+<li><p>Create a new folder named <code class="docutils literal notranslate"><span class="pre">scripts</span></code> inside the package. We will add our Python code files there.</p></li>
+<li><p>In the scripts folder, create a file <code class="docutils literal notranslate"><span class="pre">ar_control_node.py</span></code> and open it in a text editor or an IDE of your choice.</p></li>
+<li><p>Add the shebang and ROS import.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3</span>
+<span class="kn">import</span> <span class="nn">rospy</span>
+</pre></div>
+</div>
+</li>
+<li><p>Add a main function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3</span>
+<span class="kn">import</span> <span class="nn">rospy</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+      <span class="k">pass</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+      <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>Initialize your ROS node (within the main function).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3</span>
+<span class="kn">import</span> <span class="nn">rospy</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+      <span class="c1"># Creating a node must happen before anything else ROS-related</span>
+      <span class="n">rospy</span><span class="o">.</span><span class="n">init_node</span><span class="p">(</span><span class="s2">&quot;ar_control&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+      <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>Print a “Hello World” message using ROS print tools.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3</span>
+<span class="kn">import</span> <span class="nn">rospy</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+      <span class="c1"># Creating a node must happen before anything lse ROS-related</span>
+      <span class="n">rospy</span><span class="o">.</span><span class="n">init_node</span><span class="p">(</span><span class="s2">&quot;ar_control&quot;</span><span class="p">)</span>
+
+      <span class="c1"># Print out a message</span>
+      <span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;Hello world!&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+      <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>Do not exit the program automatically - keep the node alive.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3</span>
+<span class="kn">import</span> <span class="nn">rospy</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+      <span class="c1"># Creating a node must happen before anything lse ROS-related</span>
+      <span class="n">rospy</span><span class="o">.</span><span class="n">init_node</span><span class="p">(</span><span class="s2">&quot;ar_control&quot;</span><span class="p">)</span>
+
+      <span class="c1"># Print out a message</span>
+      <span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;Hello world!&quot;</span><span class="p">)</span>
+
+      <span class="c1"># Keep the program running</span>
+      <span class="n">rospy</span><span class="o">.</span><span class="n">spin</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+      <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">ROS_INFO</span></code> is one of the many <a class="reference external" href="http://wiki.ros.org/rospy/Overview/Logging">logging methods</a>.</p>
+<ul class="simple">
+<li><p>It will print the message to the terminal output, and send it to the <code class="docutils literal notranslate"><span class="pre">/rosout</span></code> topic for other nodes to monitor.</p></li>
+<li><p>There are 5 levels of logging: <code class="docutils literal notranslate"><span class="pre">DEBUG,</span> <span class="pre">INFO,</span> <span class="pre">WARNING,</span> <span class="pre">ERROR,</span> <span class="pre">FATAL</span></code>.</p></li>
+<li><p>To use a different logging level, use <code class="docutils literal notranslate"><span class="pre">rospy.logdebug(msg)</span></code>, <code class="docutils literal notranslate"><span class="pre">rospy.loginfo(msg)</span></code>, <code class="docutils literal notranslate"><span class="pre">rospy.logwarn(msg)</span></code>, <code class="docutils literal notranslate"><span class="pre">rospy.logerr(msg)</span></code> or <code class="docutils literal notranslate"><span class="pre">rospy.logfatal(msg)</span></code> to set the appropriate level.</p></li>
+</ul>
+</li>
+<li><p>Build your program (node), by running <code class="docutils literal notranslate"><span class="pre">catkin</span> <span class="pre">build</span></code> in a terminal window</p>
+<ul class="simple">
+<li><p>Remember that you must run <cite>catkin build</cite> from within your <cite>catkin_ws</cite> (or any subdirectory)</p></li>
+<li><p>This will build all of the programs, libraries, etc in <code class="docutils literal notranslate"><span class="pre">ar_control_robotont</span></code> package.</p></li>
+<li><p>In this case, it’s just a single ROS node <code class="docutils literal notranslate"><span class="pre">ar_control_node</span></code>.</p></li>
+</ul>
+</li>
+</ol>
+<section id="running-a-node">
+<h2>Running a Node<a class="headerlink" href="#running-a-node" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>Open a terminal and start the ROS master.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roscore
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The ROS Master must be running before any ROS nodes can function.</p>
+</div>
+</li>
+<li><p>Open a second terminal to run your node.</p>
+<ul>
+<li><p>In a previous exercise, we added a line to our <cite>~/.bashrc</cite> file to automatically source <cite>devel/setup.bash</cite> in new terminal windows. This will automatically export the results of the build into your new terminal session.</p></li>
+<li><p>If you’re reusing an existing terminal, you’ll need to manually source the setup files (since we added a new node):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/catkin_ws/devel/setup.bash
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>Make the node executable</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod u+x ~/catkin_ws/src/ar_control_robotont/scripts/ar_control_node.py
+</pre></div>
+</div>
+</li>
+<li><p>Run your node.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun ar_control_robotont ar_control_node.py
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This runs the program we just created. Remember to use TAB to help speed up typing and reduce errors.</p>
+</div>
+</li>
+<li><p>In a third terminal, check which nodes are running.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosnode list
+</pre></div>
+</div>
+<p>In addition to the <code class="docutils literal notranslate"><span class="pre">/rosout</span></code> node, you should now see a new <code class="docutils literal notranslate"><span class="pre">/ar_control</span></code> node listed.</p>
+</li>
+<li><p>Enter <code class="code docutils literal notranslate"><span class="pre">rosnode</span> <span class="pre">kill</span> <span class="pre">/ar_control</span></code>. This will stop the node.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is more common to stop a running node by using <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>+<kbd class="kbd docutils literal notranslate">C</kbd></kbd> in the terminal window where the node was started.</p>
+</div>
+</li>
+</ol>
+</section>
+<section id="challenge">
+<h2>Challenge<a class="headerlink" href="#challenge" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Modify the node so that it prints something as a warning and your name as an error message.</p></li>
+<li><p>Demonstrate the working node to an instructor.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="launch.html" class="btn btn-neutral float-right" title="Launch file" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="catkin_package.html" class="btn btn-neutral float-left" title="Creating Packages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, University of Tartu, License CC BY-ND-NC
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

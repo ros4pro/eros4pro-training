@@ -1,0 +1,305 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Kinematic descriptions with URDF/XACRO and generating MoveIt configuration packages &mdash; eros4pro training 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/hacks.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MoveGroup C++ interface for programming the manipulator" href="move_group_interface.html" />
+    <link rel="prev" title="Motion planning and MoveIt, MoveIt GUI" href="moveit.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> eros4pro training
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../day1/index.html">Day 1</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day2/index.html">Day 2</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day3/index.html">Day 3</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Day 4</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="xarm7_xarmstudio.html">xArm7 safety and xArmStudio live control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xarm_ros_setup.html">Installing xArm7 packages for ROS Noetic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moveit.html">Motion planning and MoveIt, MoveIt GUI</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Kinematic descriptions with URDF/XACRO and generating MoveIt configuration packages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-new-robot-description-with-urdf">Creating a new robot description with URDF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generating-moveit-configuration-package-from-a-urdf">Generating MoveIt configuration package from a URDF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-new-components-to-an-existing-robot-description">Adding new components to an existing robot description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generate-a-new-moveit-configuration-package">Generate a new MoveIt configuration package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="move_group_interface.html">MoveGroup C++ interface for programming the manipulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gripper_control.html">Action Client for opening/closing the gripper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pick_place_task.html">Pick-and-place task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multirobot_mp.html">MoveIt for multi-robot systems</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day5/index.html">Day 5</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">eros4pro training</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Day 4</a> &raquo;</li>
+        
+      <li>Kinematic descriptions with URDF/XACRO and generating MoveIt configuration packages</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/day4/urdf.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="kinematic-descriptions-with-urdf-xacro-and-generating-moveit-configuration-packages">
+<h1>Kinematic descriptions with URDF/XACRO and generating MoveIt configuration packages<a class="headerlink" href="#kinematic-descriptions-with-urdf-xacro-and-generating-moveit-configuration-packages" title="Permalink to this headline">¶</a></h1>
+<p>So now that we have established that MoveIt is the ROS software solution for controlling the manipulators and how to use packages provided by the manufacturer. Let’s see how we can use the capabilities of MoveIt with any serial manipulator and how to customize existing robots.</p>
+<p>In order to start using MoveIt, we need two things:</p>
+<ol class="arabic simple">
+<li><p>kinematic description of our manipulator</p></li>
+<li><p>MoveIt configuration package.</p></li>
+</ol>
+<p>Next we are going to use URDF (Unified Robot Description Format) to generate a kinematic description for a fictional robot aironbot and use it to generate the MoveIt configuration package.</p>
+<p>If you are new to terminology of kinematics, it is recommended to complete this nugget explaining the most relevant concepts such as links, joints, pose, forward kinematics, and inverse kinematics.</p>
+<p><a class="reference external" href="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/RoboNuggets/FDRenderer/index.html?LearningNugget=21e7754d33a748fe8667b11b9ea77cc6&amp;Language=EN&amp;FDEP=true">Kinematics</a></p>
+<iframe class="nugget" src="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/RoboNuggets/FDRenderer/index.html?LearningNugget=21e7754d33a748fe8667b11b9ea77cc6&Language=EN&FDEP=true"></iframe><section id="creating-a-new-robot-description-with-urdf">
+<h2>Creating a new robot description with URDF<a class="headerlink" href="#creating-a-new-robot-description-with-urdf" title="Permalink to this headline">¶</a></h2>
+<p>This nugget is about creating a URDF description of a manipulator robot.</p>
+<p><a class="reference external" href="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/RoboNuggets/FDRenderer/index.html?LearningNugget=73b4e69eb916433f93cbc5ac2015f4c6&amp;Language=EN&amp;FDEP=true">Creating a manipulator URDF</a></p>
+<iframe class="nugget" src="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/RoboNuggets/FDRenderer/index.html?LearningNugget=73b4e69eb916433f93cbc5ac2015f4c6&Language=EN&FDEP=true"></iframe></section>
+<section id="generating-moveit-configuration-package-from-a-urdf">
+<h2>Generating MoveIt configuration package from a URDF<a class="headerlink" href="#generating-moveit-configuration-package-from-a-urdf" title="Permalink to this headline">¶</a></h2>
+<p>This nugget shows how to generate a new MoveIt configuration package from a URDF description.</p>
+<p><a class="reference external" href="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/RoboNuggets/FDRenderer/index.html?LearningNugget=91ed275b87d74b859c18a9f44e39e4a0&amp;Language=EN&amp;FDEP=true">Using MoveIt Setup Assistant to generate a MoveIt configuration package</a></p>
+<iframe class="nugget" src="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/RoboNuggets/FDRenderer/index.html?LearningNugget=91ed275b87d74b859c18a9f44e39e4a0&Language=EN&FDEP=true"></iframe></section>
+<section id="adding-new-components-to-an-existing-robot-description">
+<h2>Adding new components to an existing robot description<a class="headerlink" href="#adding-new-components-to-an-existing-robot-description" title="Permalink to this headline">¶</a></h2>
+<p>In order to add new components to an existing robot description, we can make use of the power of XACRO. When modifications are required, it is not a good practice to go in and change the third party software (e.g. the robot description package provided by the manufacturer). Instead, we create a new description package and include anything we may need from the manufacturer’s package and/or anywhere else. Thus, for modifying an existing robot, we typically follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Create a new description package for the customized solution</p></li>
+<li><p>Create a new description file that includes the components we need from the manufacturer’s package</p></li>
+<li><p>Add modifications (e.g. other robots, environment components) in the new description file.</p></li>
+<li><p>Generate a new MoveIt configuration package for the customized description/setup.</p></li>
+</ol>
+<p>In order to mount the xArm7 on a tool cart as shown in the following image, we need to include the description of xArm7 and its gripper. Additionally we need the description for the cart that the robot is mounted on. We have already created a boilerplate package with a description file that contains uncustomized xArm7 and its gripper. Download the the package:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/unitartu-edu/xarm7_gripper_cart_description
+</pre></div>
+</div>
+<p>As you see the package contains two folders: meshes and urdf. The meshes folder contains a STL-file for the cart. The urdf folder contains a urdf.xacro-file which includes the xArm7 and the gripper. Feel free to use the urdf_tutorial/display.launch to visualize the provided xacro-file.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/xarm_cart.png"><img alt="../_images/xarm_cart.png" src="../_images/xarm_cart.png" style="width: 600pt;" /></a>
+</figure>
+<p>When we use XACRO to include other URDF descriptions, we can directly refer to the links and joints defined in the included files, e.g., the links of the xArm7 robot. To mount the xArm7 on the cart, we need to define a link with the geometry from the meshes/cart.stl. Then we need to define a joint that describes the geometric connection (i.e. the kinematic joint) between the cart and the root link of the xArm7 robot.</p>
+<p>Feel free to copy the following snippet but do try to understand what it means.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;link</span> <span class="na">name=</span><span class="s">&quot;cart&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;visual&gt;</span>
+    <span class="nt">&lt;geometry&gt;</span>
+      <span class="nt">&lt;mesh</span> <span class="na">filename=</span><span class="s">&quot;package://xarm7_gripper_cart_description/meshes/cart.stl&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/geometry&gt;</span>
+    <span class="nt">&lt;material</span> <span class="na">name=</span><span class="s">&quot;silver&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;color</span> <span class="na">rgba=</span><span class="s">&quot;.75 .75 .75 1&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/material&gt;</span>
+  <span class="nt">&lt;/visual&gt;</span>
+  <span class="nt">&lt;collision&gt;</span>
+    <span class="nt">&lt;geometry&gt;</span>
+      <span class="nt">&lt;mesh</span> <span class="na">filename=</span><span class="s">&quot;package://xarm7_gripper_cart_description/meshes/cart.stl&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/geometry&gt;</span>
+  <span class="nt">&lt;/collision&gt;</span>
+<span class="nt">&lt;/link&gt;</span>
+
+<span class="nt">&lt;joint</span> <span class="na">name=</span><span class="s">&quot;base_to_cart&quot;</span> <span class="na">type=</span><span class="s">&quot;fixed&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;parent</span> <span class="na">link=</span><span class="s">&quot;cart&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;child</span> <span class="na">link=</span><span class="s">&quot;$(arg prefix)world&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;origin</span> <span class="na">xyz=</span><span class="s">&quot;0 0 0.79&quot;</span> <span class="na">rpy=</span><span class="s">&quot;0 0 -.52&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/joint&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="generate-a-new-moveit-configuration-package">
+<h2>Generate a new MoveIt configuration package<a class="headerlink" href="#generate-a-new-moveit-configuration-package" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have the new description, we can generate a new MoveIt configuration package for the customized system.
+Please note that when generating a collision matrix, we should not allow collisions between the gripper fingers and the cart. Can you figure out how to modify the collision matrix after it has been automatically generated?</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="move_group_interface.html" class="btn btn-neutral float-right" title="MoveGroup C++ interface for programming the manipulator" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="moveit.html" class="btn btn-neutral float-left" title="Motion planning and MoveIt, MoveIt GUI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, University of Tartu, License CC BY-ND-NC
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

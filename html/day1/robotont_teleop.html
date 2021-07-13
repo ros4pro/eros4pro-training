@@ -1,0 +1,285 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Teleoperation &mdash; eros4pro training 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/hacks.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Teleoperation using a remote ROS Master" href="robotont_remote_teleop.html" />
+    <link rel="prev" title="Introduction to ROS" href="ros_intro.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> eros4pro training
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Day 1</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ubuntu_gui.html">Introduction to Ubuntu 20.04 GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ubuntu_filesystem.html">Exploring the Linux File System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ubuntu_shell.html">The Linux Terminal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros_intro.html">Introduction to ROS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros_intro.html#navigating-the-ros-filesystem">Navigating the ROS Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ros_intro.html#installing-and-running-your-first-ros-node">Installing and Running your first ROS node</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Teleoperation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#robotont">Robotont</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#teleoperating-robotont-using-ssh">Teleoperating Robotont using SSH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#additional-information">Additional information</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="robotont_remote_teleop.html">Teleoperation using a remote ROS Master</a></li>
+<li class="toctree-l2"><a class="reference internal" href="control_robotont_with_app.html">Teleoperation using Android Application</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day2/index.html">Day 2</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day3/index.html">Day 3</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day4/index.html">Day 4</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day5/index.html">Day 5</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">eros4pro training</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Day 1</a> &raquo;</li>
+        
+      <li>Teleoperation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/day1/robotont_teleop.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="teleoperation">
+<h1>Teleoperation<a class="headerlink" href="#teleoperation" title="Permalink to this headline">¶</a></h1>
+<section id="robotont">
+<h2>Robotont<a class="headerlink" href="#robotont" title="Permalink to this headline">¶</a></h2>
+<p>Robotont is an omnidirectionally moving platform meant for educational purposes. The platform is grown out from the Tartu University’s football robot at ROBOTEX robot competition, which was customized for teaching. Robotont combines an Intel Realsense 3D depth camera and Intel NUC on-board computer to perform computationally expensive tasks (e.g. 3D mapping) locally on the robot. More information on Robotont is available in <a class="reference external" href="http://robotont.ut.ee">robotont.ut.ee</a>.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/robotont_image.png"><img alt="../_images/robotont_image.png" src="../_images/robotont_image.png" style="width: 400.0px; height: 364.5px;" /></a>
+</figure>
+</section>
+<section id="teleoperating-robotont-using-ssh">
+<h2>Teleoperating Robotont using SSH<a class="headerlink" href="#teleoperating-robotont-using-ssh" title="Permalink to this headline">¶</a></h2>
+<p>In order to start ROS programs on Robotont, we need to log into the robot.</p>
+<p>To make robot visible also with the name not only with the IP aaddress we have to add the robots name into laptop hosts file.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo gedit /etc/hosts
+</pre></div>
+</div>
+</div></blockquote>
+<p>And add the line:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">192</span>.168.200.&lt;robot number&gt; robotont-&lt;robot number&gt;
+</pre></div>
+</div>
+</div></blockquote>
+<p>For example:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">192</span>.168.200.12 robotont-12
+</pre></div>
+</div>
+</div></blockquote>
+<p>In english:</p>
+<p><a class="reference external" href="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/UNICO/FDRenderer/index.html?LearningNugget=7d8e44d14906422db6492cdafbb04077&amp;Language=EN&amp;FDEP=true">Controlling Robotont from keyboard using SSH</a></p>
+<iframe class="nugget" src="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/UNICO/FDRenderer/index.html?LearningNugget=7d8e44d14906422db6492cdafbb04077&Language=EN&FDEP=true"></iframe><p>Eesti keeles:</p>
+<p><a class="reference external" href="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/UNICO/FDRenderer/index.html?LearningNugget=a319a6b37fa24dd39250bfe971479795&amp;Language=EN&amp;FDEP=true">Robotondi juhtimine klaviatuurilt üle SSH</a></p>
+<iframe class="nugget" src="https://ip.festo-didactic.com/DigitalEducation/EITManufacturing/UNICO/FDRenderer/index.html?LearningNugget=a319a6b37fa24dd39250bfe971479795&Language=EN&FDEP=true"></iframe></section>
+<section id="additional-information">
+<h2>Additional information<a class="headerlink" href="#additional-information" title="Permalink to this headline">¶</a></h2>
+<p>Password: t0ndik00bas</p>
+<blockquote>
+<div><div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For security reasons, passwords are not shown as asterisks or bullets when being typed into the terminal. So no panic, your keyboard works just fine. Simply type the password and hit enter.</p>
+</div>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>When logged in successfully, you can see that the terminal prompt has changed from <code class="code docutils literal notranslate"><span class="pre">peko&#64;laptop-X</span></code> to <code class="code docutils literal notranslate"><span class="pre">peko&#64;robotont-X</span></code>. This will be an important reference when trying to figure out which terminal is connected to where.</p></li>
+<li><p>After logging into the robot, the ROS environment should be automatically sourced for you. You can quickly display the last lines of the file with <code class="code docutils literal notranslate"><span class="pre">tail</span> <span class="pre">~/.bashrc</span></code> command to examine which workspaces are sourced.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="robotont_remote_teleop.html" class="btn btn-neutral float-right" title="Teleoperation using a remote ROS Master" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ros_intro.html" class="btn btn-neutral float-left" title="Introduction to ROS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, University of Tartu, License CC BY-ND-NC
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

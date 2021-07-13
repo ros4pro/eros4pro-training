@@ -1,0 +1,272 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Advanced task: Maze Navigation using AR Markers &mdash; eros4pro training 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/hacks.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Day 3" href="../day3/index.html" />
+    <link rel="prev" title="Advanced task: AR Remote Control" href="ar_remote_control.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> eros4pro training
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../day1/index.html">Day 1</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Day 2</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="catkin_workspace.html">Catkin Workspaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="catkin_package.html">Creating Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="node.html">Creating Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="launch.html">Launch file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_markers.html">AR Markers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages.html">Publisher &amp; Subscriber</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_remote_control.html">Advanced task: AR Remote Control</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Advanced task: Maze Navigation using AR Markers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#differentiate-between-markers">Differentiate between markers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#follow-one-marker">Follow one marker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#find-and-follow-next-marker">Find and follow next marker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#navigate-the-maze">Navigate the maze</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day3/index.html">Day 3</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day4/index.html">Day 4</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day5/index.html">Day 5</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">eros4pro training</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Day 2</a> &raquo;</li>
+        
+      <li>Advanced task: Maze Navigation using AR Markers</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/day2/maze_navigation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="advanced-task-maze-navigation-using-ar-markers">
+<h1>Advanced task: Maze Navigation using AR Markers<a class="headerlink" href="#advanced-task-maze-navigation-using-ar-markers" title="Permalink to this headline">¶</a></h1>
+<p>There is a maze in the middle of the classroom.
+In this task we will be navigating a robot through this maze based on AR markers on the walls.</p>
+<p>In the previous task we used a single AR marker to control the robot, so it made no difference what marker it was.
+In this task the robot will see many AR markers, each of them different.</p>
+<p>The core principle of this task is to move from one AR marker to another, so the code will need to keep track of which AR marker to search for.
+Additionally, it is possible that at any given time point there are several AR markers in the camera frame-
+The robot should ignore every marker that is not the one it is currently following.</p>
+<p>You can find a simulated maze by running the following in a terminal:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch robotont_gazebo world_minimaze_ar.launch
+</pre></div>
+</div>
+</div></blockquote>
+<section id="differentiate-between-markers">
+<h2>Differentiate between markers<a class="headerlink" href="#differentiate-between-markers" title="Permalink to this headline">¶</a></h2>
+<p>If there is not already a method for determining AR marker ID in your code, add it now.</p>
+<p>Add a variable to your code that determines which marker the robot is currently following (the target marker). Print out something when the robot sees this marker and make it so the robot ignores all other markers.</p>
+</section>
+<section id="follow-one-marker">
+<h2>Follow one marker<a class="headerlink" href="#follow-one-marker" title="Permalink to this headline">¶</a></h2>
+<p>Once your robot is capable of focusing on a single AR marker, turn towards the marker and get close to it.
+You will need to use the marker’s position information to center the robot towards the marker and to stop a reasonable distance from it.</p>
+<p>Your robot should turn on the stop until it finds the marker it is searching for, center itself, and drive to the marker.</p>
+</section>
+<section id="find-and-follow-next-marker">
+<h2>Find and follow next marker<a class="headerlink" href="#find-and-follow-next-marker" title="Permalink to this headline">¶</a></h2>
+<p>Now that your robot has arrived at the first marker, the identificator of the target marker should be changed in the code.
+Repeat the actions done for the previous marker - find it, center towards it and follow it.</p>
+</section>
+<section id="navigate-the-maze">
+<h2>Navigate the maze<a class="headerlink" href="#navigate-the-maze" title="Permalink to this headline">¶</a></h2>
+<p>Find out the ID’s of the markers on the walls of the maze and their order.
+Use your program to follow the AR markers in the order in which they are in the maze to navigate from start to finish.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../day3/index.html" class="btn btn-neutral float-right" title="Day 3" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ar_remote_control.html" class="btn btn-neutral float-left" title="Advanced task: AR Remote Control" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, University of Tartu, License CC BY-ND-NC
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,362 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>AR Markers &mdash; eros4pro training 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/contentui.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/hacks.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Publisher &amp; Subscriber" href="messages.html" />
+    <link rel="prev" title="Launch file" href="launch.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> eros4pro training
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../day1/index.html">Day 1</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Day 2</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="catkin_workspace.html">Catkin Workspaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="catkin_package.html">Creating Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="node.html">Creating Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="launch.html">Launch file</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">AR Markers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-are-ar-markers">What are AR markers?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id">ID</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#position">Position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#orientation">Orientation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages.html">Publisher &amp; Subscriber</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar_remote_control.html">Advanced task: AR Remote Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maze_navigation.html">Advanced task: Maze Navigation using AR Markers</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day3/index.html">Day 3</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day4/index.html">Day 4</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../day5/index.html">Day 5</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">eros4pro training</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Day 2</a> &raquo;</li>
+        
+      <li>AR Markers</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/day2/ar_markers.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="ar-markers">
+<span id="id1"></span><h1>AR Markers<a class="headerlink" href="#ar-markers" title="Permalink to this headline">¶</a></h1>
+<section id="what-are-ar-markers">
+<h2>What are AR markers?<a class="headerlink" href="#what-are-ar-markers" title="Permalink to this headline">¶</a></h2>
+<p>AR (Augmented Reality) markers or AR tags are black-and-white images resembling QR codes.
+Some examples of AR markers can be seen in the images below.
+Note how the black-and-white pattern varies between the markers, remaining unique even if the marker is turned, and how the pattern only contains 90-degree angles.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../_images/marker1.png"><img alt="marker1" src="../_images/marker1.png" style="width: 300pt;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/marker2.png"><img alt="marker2" src="../_images/marker2.png" style="width: 300pt;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/marker3.png"><img alt="marker3" src="../_images/marker3.png" style="width: 300pt;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+<p>What makes AR markers useful in robotics, is the uniqueness of every marker and the fact that every marker has a known layout of black and white areas.
+Due to the unique and predetermined patterns and the square shape of the AR markers, it is possible to get a lot of useful information about the position and orientation of the marker simply by looking at it.</p>
+<p>By the end of today’s training, you will have used the orientation information of an AR marker to remotely control a Robotont robot, and made use of the uniqueness of every marker to navigate a maze.</p>
+<p>By using a ROS package called <cite>ar_track_alvar</cite> we can get the following raw information from an AR marker:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%" />
+<col style="width: 61%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>header:
+  seq: <span class="m">0</span>
+  stamp:
+    secs: <span class="m">717</span>
+    nsecs: <span class="m">281000000</span>
+  frame_id: <span class="s2">&quot;camera_link&quot;</span>
+id: <span class="m">2</span>
+confidence: <span class="m">0</span>
+pose:
+  header:
+    seq: <span class="m">0</span>
+    stamp:
+      secs: <span class="m">0</span>
+      nsecs:         <span class="m">0</span>
+    frame_id: <span class="s1">&#39;&#39;</span>
+  pose:
+    position:
+      x: <span class="m">1</span>.20374426691
+      y: -0.268434319169
+      z: <span class="m">0</span>.0206573474044
+    orientation:
+      x: <span class="m">0</span>.496138277336
+      y: <span class="m">0</span>.504417605457
+      z: -0.50396441133
+      w: -0.495408479116
+</pre></div>
+</div>
+</td>
+<td><p><a class="reference internal" href="../_images/marker_data_example_robot_position.png"><img alt="robot_with_ar" src="../_images/marker_data_example_robot_position.png" style="width: 1200pt;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple">
+<li><p>Take a look at the information about AR markers in your own terminal by starting the launch file created in the previous section. Then run the following command in another terminal:</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rostopic <span class="nb">echo</span> /ar_pose_marker
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Move an AR marker in front of the laptop’s camera and observe how the information changes in the terminal.</p></li>
+</ol>
+<p>From this raw information, we can extract three useful groups of information:</p>
+<ol class="arabic simple">
+<li><p>ID</p></li>
+<li><p>Position</p></li>
+<li><p>Orientation</p></li>
+</ol>
+<p>Let’s observe each of these a bit more closely.</p>
+</section>
+<section id="id">
+<h2>ID<a class="headerlink" href="#id" title="Permalink to this headline">¶</a></h2>
+<p>The markers’ ID’s are predetermined and known.
+A marker with ID 1 always looks the same, and markers with different ID’s never look the same.
+This means that by seeing the pattern on the marker, it is possible to know what that marker’s ID is.
+One situation where this could be useful is if you need to find a certain object among other similar objects.
+Just detecting the type of the objects might not be enough.
+But if each object had a different AR marker on it, and you were looking for the object with marker number 10, you would be able to identify the correct object easily.</p>
+</section>
+<section id="position">
+<h2>Position<a class="headerlink" href="#position" title="Permalink to this headline">¶</a></h2>
+<p>The position of an AR marker is its position relative to the center of the camera frame.</p>
+<p>In the above image, the AR marker is 1.2 metres in front of the robot (the green line marks 1 m from the wall).
+Find this number in the data next to the image.
+This is the marker’s position’s x component and corresponds to the direction indicated in the image with the red arrow.</p>
+<p>The y component is -0.26, meaning the marker’s horizontal center is 0.26 m to the right of the camera frame’s horizontal center.
+This direction is marked in the image with the green arrow.</p>
+<p>Position in z-axis is close to 0, meaning the marker’s vertical center is close to the camera image’s vertical center. z-axis is marked in the image with the blue arrow.</p>
+</section>
+<section id="orientation">
+<h2>Orientation<a class="headerlink" href="#orientation" title="Permalink to this headline">¶</a></h2>
+<p>Orientation desrcribes which way and how much the AR marker is rotated relative to the center of the camera frame.
+The patterns on the markers are fixed and lack symmetry in vertical axis, which means that from the pattern it is possible to determine how much the marker has been rotated (roll).
+Since all angles in AR markers are 90 degrees, if the markers are tilted (pitch) or turned (yaw), some angles become less or more than 90 degrees.
+From this it is possible to determine the exact angle and direction or the marker relative to the camera.
+Another way to describe this is with directional vectors on the straight lines of the marker - these let us know how much and in which direction the marker has been turned.</p>
+<p>The raw orientation information from <cite>ar_track_alvar</cite> looks like it could be a representation of orientation in <cite>x</cite>, <cite>y</cite> and <cite>z</cite> axes, with a <cite>w</cite> thrown in as well.
+This is not so.
+The <cite>x</cite>, <cite>y</cite>, <cite>z</cite> and <cite>w</cite> represent something called a quaternion.
+Quaternions are complex mathematical structures used to represent 3D rotations, and must be converted to something else, such as Euler angles in order to be easier to read.
+Euler angles describe an object’s angles of rotation in X (roll), Y (pitch) and Z (yaw) axes relative to a fixed reference frame.
+The three axes are depicted in the two images below.
+In our case, the reference frame would be an unrotated marker.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../_images/roll_pitch_yaw_1.png"><img alt="roll_pitch_yaw_1" src="../_images/roll_pitch_yaw_1.png" style="width: 300pt;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/roll_pitch_yaw_2.png"><img alt="roll_pitch_yaw_2" src="../_images/roll_pitch_yaw_2.png" style="width: 300pt;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="messages.html" class="btn btn-neutral float-right" title="Publisher &amp; Subscriber" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="launch.html" class="btn btn-neutral float-left" title="Launch file" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, University of Tartu, License CC BY-ND-NC
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
